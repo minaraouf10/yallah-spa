@@ -1,0 +1,118 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:pinput/pinput.dart';
+import 'package:yal_spa/core/config/router/router.dart';
+import 'package:yal_spa/features/auth/presstion/login/widget/otp_widget.dart';
+
+import '../../../../core/config/themes/app_colors.dart';
+import '../../../../core/config/utils/assets_manager.dart';
+import '../../../../core/config/widgets/custom_button.dart';
+import '../../../../core/config/widgets/custom_sized_box.dart';
+
+@RoutePage()
+class OtpScreen extends StatelessWidget {
+  const OtpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Image.asset(
+            AssetsManger.loginPage,
+          ),
+          Container(
+            margin: const EdgeInsetsDirectional.only(top: 90.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: AppColors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Height(32.0),
+                  const Text(
+                    'تَحَقّق',
+                    style: TextStyle(
+                      fontFamily: 'Almarai',
+                      fontSize: 22.0,
+                    ),
+                  ),
+                  const Text(
+                    'تم إرسال رمز التفعيل إلي رقم الهاتف ',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontFamily: 'Almarai',
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  const Height(24.0),
+                  Pinput(
+                    length: 6,
+                    defaultPinTheme: OtpWidget.defaultPinTheme,
+                    focusedPinTheme: OtpWidget.focusedPinTheme,
+                    submittedPinTheme: OtpWidget.submittedPinTheme,
+                    showCursor: true,
+                    onChanged: (value) {
+                      OtpWidget.code = value;
+                    },
+                    onCompleted: (pin) {
+                      //   sendCode(pin,context);
+                    },
+                  ),
+                  const Height(12.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          const Text(
+                            '34s',
+                            style: TextStyle(
+                                fontSize: 12.0,
+                                fontFamily: 'Almarai',
+                                color: AppColors.primary),
+                          ),
+                          const Height(5.0),
+                          Row(
+                            children: [
+                              const Text(
+                                'إعادة إرسال',
+                                style: TextStyle(
+                                  fontFamily: 'Almarai',
+                                  fontSize: 12.0,
+                                  color: AppColors.textPlaceholder,
+                                ),
+                              ),
+                              const Width(5.0),
+                              SvgPicture.asset(AssetsManger.resend)
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  const Height(24.0),
+                  CustomButton(
+                    title: 'تاكيد',
+                    textStyle: const TextStyle(
+                        fontFamily: "Almarai",
+                        fontSize: 16.0,
+                        color: AppColors.white),
+                    onPress: () {
+                      context.pushRoute(const LocationRoute());
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

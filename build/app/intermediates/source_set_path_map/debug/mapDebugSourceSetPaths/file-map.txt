@@ -1,0 +1,15 @@
+com.example.yal_spa.app-jetified-window-1.0.0-beta04-0 C:\Users\Mina Raouf\.gradle\caches\transforms-4\03c239329a4faf53c50f7f679eae1e02\transformed\jetified-window-1.0.0-beta04\res
+com.example.yal_spa.app-jetified-annotation-experimental-1.1.0-1 C:\Users\Mina Raouf\.gradle\caches\transforms-4\6b20ac70119ba82b497a6feb97faf95a\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.yal_spa.app-core-1.6.0-2 C:\Users\Mina Raouf\.gradle\caches\transforms-4\82d0c2272e8b8a1fbc0fc45d51ae987b\transformed\core-1.6.0\res
+com.example.yal_spa.app-jetified-window-java-1.0.0-beta04-3 C:\Users\Mina Raouf\.gradle\caches\transforms-4\c049a34a356d65f0189dc906a6f1d4cc\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.yal_spa.app-debug-4 D:\android_project\yal_spa\android\app\src\debug\res
+com.example.yal_spa.app-main-5 D:\android_project\yal_spa\android\app\src\main\res
+com.example.yal_spa.app-pngs-6 D:\android_project\yal_spa\build\app\generated\res\pngs\debug
+com.example.yal_spa.app-resValues-7 D:\android_project\yal_spa\build\app\generated\res\resValues\debug
+com.example.yal_spa.app-packageDebugResources-8 D:\android_project\yal_spa\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.yal_spa.app-packageDebugResources-9 D:\android_project\yal_spa\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.yal_spa.app-debug-10 D:\android_project\yal_spa\build\app\intermediates\merged_res\debug\mergeDebugResources
+com.example.yal_spa.app-debug-11 D:\android_project\yal_spa\build\connectivity_plus\intermediates\packaged_res\debug\packageDebugResources
+com.example.yal_spa.app-debug-12 D:\android_project\yal_spa\build\flutter_localization\intermediates\packaged_res\debug\packageDebugResources
+com.example.yal_spa.app-debug-13 D:\android_project\yal_spa\build\flutter_native_splash\intermediates\packaged_res\debug\packageDebugResources
+com.example.yal_spa.app-debug-14 D:\android_project\yal_spa\build\shared_preferences_android\intermediates\packaged_res\debug\packageDebugResources
