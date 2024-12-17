@@ -5,6 +5,7 @@ class UserModel {
   late String token;
 
   UserModel({
+    required this.id,
     required this.name,
     required this.phone,
     required this.token,

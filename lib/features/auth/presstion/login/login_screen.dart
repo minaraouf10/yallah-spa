@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,8 +32,8 @@ class LoginScreen extends ConsumerWidget {
     });
 
     ref.listen(loginProvider.isSuccess.provider, (_, state) {
-      if (state) {
-       // context.pushRoute(const OtpRoute());
+      if (state ) {
+        context.pushRoute(const OtpRoute());
       }
     });
     return Scaffold(
@@ -77,10 +79,11 @@ class LoginScreen extends ConsumerWidget {
                     ),
                   ),
                   const Height(5.0),
-                  const CustomTextFormField(
+                   CustomTextFormField(
                     hint: 'أدخل رقم جوالك هنا',
+                    controller: loginProvider.phoneController,
                     isEnglish: TextAlign.right,
-                    hintTextStyle: TextStyle(
+                    hintTextStyle: const TextStyle(
                       fontFamily: 'Almarai',
                       fontSize: 14.0,
                       color: AppColors.textPlaceholder,
@@ -125,7 +128,7 @@ class LoginScreen extends ConsumerWidget {
                             fontSize: 16.0,
                             color: AppColors.white),
                         onPress: () {
-                          context.pushRoute(const OtpRoute());
+                         // context.pushRoute(const OtpRoute());
                           loginProvider.userLogin();
 
                         },

@@ -19,14 +19,38 @@ class LoginLogic extends _LoginStates {
 
   final TextEditingController phoneController = TextEditingController();
 
+  // Future<void> userLogin() async {
+  //   try {
+  //     isLoading.state = true;
+  //
+  //     await authService.login(
+  //       phoneController.text.trim(),
+  //     );
+  //     isSuccess.state = true;
+  //   } catch (e, s) {
+  //     isError.state = e.toString();
+  //     log(isError.state, stackTrace: s);
+  //   } finally {
+  //     isLoading.state = false;
+  //   }
+  // }
+
   Future<void> userLogin() async {
     try {
       isLoading.state = true;
 
-      await authService.login(
+      final user = await authService.login(
         phoneController.text.trim(),
       );
-      isSuccess.state = true;
+
+      if (user != null) {
+        isSuccess.state = true;
+        log('User logged in successfully: ${user.name}');
+      } else {
+        isSuccess.state = true;
+        isError.state = 'No user data received.';
+        log(isError.state);
+      }
     } catch (e, s) {
       isError.state = e.toString();
       log(isError.state, stackTrace: s);
@@ -34,6 +58,7 @@ class LoginLogic extends _LoginStates {
       isLoading.state = false;
     }
   }
+
 
 }
 
