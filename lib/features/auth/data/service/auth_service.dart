@@ -20,20 +20,9 @@ class AuthService {
 
   AuthService(this.client, {required this.prefs});
 
-  // Future<UserModel> login(String phone) async {
-  //   final body = {
-  //     'phone': phone,
-  //   };
-  //   final res = CustomResponse(await client.post(Endpoints.login, body: body));
-  //   if (res.isError) throw res.message;
-  //   final data = res.data as Json;
-  //
-  //   final userModel = UserModel.fromJson(data);
-  //   UserPrefs.setUserToken(userModel.token);
-  //   return userModel;
-  // }
 
-  Future<UserModel?> login(String phone) async {
+
+  Future<DataModel?> login(String phone) async {
     final body = {
       'phone': phone,
     };
@@ -48,9 +37,39 @@ class AuthService {
     if (res.data is Map<String, dynamic>) {
       // If 'data' is a JSON object, deserialize it
       final data = res.data as Map<String, dynamic>;
-      final userModel = UserModel.fromJson(data);
-      UserPrefs.setUserToken(userModel.token);
-      return userModel;
+      final dataMode = DataModel.fromJson(data);
+      await UserPrefs.setUserToken(dataMode.token);
+      return dataMode;
+    } else if (res.data is List) {
+      // If 'data' is an empty list, return null or a default UserModel
+      log('Data field is an empty list.');
+      return null; // or handle it accordingly
+    } else {
+      // Unexpected format
+      throw 'Invalid response: Unexpected data format';
+    }
+  }
+
+
+  Future<DataModel?> otp(String phone,String otp) async {
+    final body = {
+      'phone': phone,
+      'otp': otp,
+    };
+
+    // Create CustomResponse
+    final res = CustomResponse(await client.post(Endpoints.otp, body: body));
+
+    // Throw an error if 'error' is true
+    if (res.isError) throw res.message;
+
+    // Handle the 'data' field dynamically
+    if (res.data is Map<String, dynamic>) {
+      // If 'data' is a JSON object, deserialize it
+      final data = res.data as Map<String, dynamic>;
+      final dataMode = DataModel.fromJson(data);
+      await UserPrefs.setUserToken(dataMode.token);
+      return dataMode;
     } else if (res.data is List) {
       // If 'data' is an empty list, return null or a default UserModel
       log('Data field is an empty list.');

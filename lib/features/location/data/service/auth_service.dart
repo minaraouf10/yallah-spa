@@ -7,7 +7,7 @@
 // import 'package:shibrawi/core/api_helper/endpoints.dart';
 // import 'package:shibrawi/core/config/utils/custom_state.dart';
 // import 'package:shibrawi/core/data/locale/user_pref.dart';
-// import 'package:shibrawi/features/auth/data/model/user_model.dart';
+// import 'package:shibrawi/features/auth/data/model/home_screen_model.dart';
 //
 // final authServiceProvider = Provider<AuthService>(
 //   (ref) => AuthService(ref.read(dioClientProvider),

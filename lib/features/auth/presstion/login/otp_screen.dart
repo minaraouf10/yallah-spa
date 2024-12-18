@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pinput/pinput.dart';
 import 'package:yal_spa/core/config/router/router.dart';
@@ -9,13 +12,22 @@ import '../../../../core/config/themes/app_colors.dart';
 import '../../../../core/config/utils/assets_manager.dart';
 import '../../../../core/config/widgets/custom_button.dart';
 import '../../../../core/config/widgets/custom_sized_box.dart';
+import 'controller/otp_provider.dart';
 
 @RoutePage()
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends ConsumerWidget {
   const OtpScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
+    final otpProvider = ref.read(otpProviderScreen);
+
+    ref.listen(otpProvider.isSuccess.provider, (_, state) {
+      if (state ) {
+        context.pushRoute(const LocationRoute());
+      }
+    });
+
     return Scaffold(
       body: Stack(
         children: [
@@ -51,18 +63,21 @@ class OtpScreen extends StatelessWidget {
                     ),
                   ),
                   const Height(24.0),
-                  Pinput(
-                    length: 6,
-                    defaultPinTheme: OtpWidget.defaultPinTheme,
-                    focusedPinTheme: OtpWidget.focusedPinTheme,
-                    submittedPinTheme: OtpWidget.submittedPinTheme,
-                    showCursor: true,
-                    onChanged: (value) {
-                      OtpWidget.code = value;
-                    },
-                    onCompleted: (pin) {
-                      //   sendCode(pin,context);
-                    },
+                  Center(
+                    child: Pinput(
+                      length: 4,
+                      defaultPinTheme: OtpWidget.defaultPinTheme,
+                      focusedPinTheme: OtpWidget.focusedPinTheme,
+                      submittedPinTheme: OtpWidget.submittedPinTheme,
+                      showCursor: true,
+                      onChanged: (value) {
+                        OtpWidget.code = value;
+                      },
+                      onCompleted: (pin) {
+                        otpProvider.otpController.text = pin;
+                        log(otpProvider.otpController.text, name: 'otp value');
+                      },
+                    ),
                   ),
                   const Height(12.0),
                   Row(
@@ -104,7 +119,7 @@ class OtpScreen extends StatelessWidget {
                         fontSize: 16.0,
                         color: AppColors.white),
                     onPress: () {
-                      context.pushRoute(const LocationRoute());
+                      otpProvider.checkOTP();
                     },
                   ),
                 ],

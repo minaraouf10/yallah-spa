@@ -39,13 +39,13 @@ class LoginLogic extends _LoginStates {
     try {
       isLoading.state = true;
 
-      final user = await authService.login(
+      final data = await authService.login(
         phoneController.text.trim(),
       );
 
-      if (user != null) {
+      if (data?.user != null) {
         isSuccess.state = true;
-        log('User logged in successfully: ${user.name}');
+        log('User logged in successfully: ${data?.user.name}');
       } else {
         isSuccess.state = true;
         isError.state = 'No user data received.';

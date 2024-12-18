@@ -16,16 +16,18 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
-          child: Column(
-            children: [
-              TopScreen(),
-              Height(20.0),
-              Search(),
-              Height(20.0),
-              SmoothPage(),
-              Height(20.0),
-              Category(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TopScreen(),
+                Height(20.0),
+                Search(),
+                Height(20.0),
+                SmoothPage(),
+                Height(20.0),
+                Category(),
+              ],
+            ),
           ),
         ),
       ),
