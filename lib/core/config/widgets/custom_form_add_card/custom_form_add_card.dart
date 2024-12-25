@@ -43,7 +43,7 @@ class CustomFormAddCard extends StatelessWidget {
               //   ),
               // ),
               const Text(
-                "Add Credit/Debit Card",
+                'Add Credit/Debit Card',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
@@ -65,7 +65,7 @@ class CustomFormAddCard extends StatelessWidget {
               Row(
                 children: [
                   const Text(
-                    "Expiry",
+                    'Expiry',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -130,7 +130,7 @@ class CustomFormAddCard extends StatelessWidget {
               const Row(
                 children: [
                   Text(
-                    "You can remove this card",
+                    'You can remove this card',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -166,7 +166,7 @@ class CustomFormAddCard extends StatelessWidget {
                       ),
                       Width(45.0),
                       Text(
-                        "Add Card",
+                        'Add Card',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,

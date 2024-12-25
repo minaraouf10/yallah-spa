@@ -83,6 +83,7 @@ class CustomButton extends StatelessWidget {
                             fontSize: titleSize ?? 16,
                           ),
                     ),
+
                     if (suffixIconPath != null) ...[
                       const SizedBox(width: 10),
                       SvgPicture.asset(suffixIconPath!, height: 24)

@@ -15,6 +15,40 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CardRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CardScreen(),
+      );
+    },
+    EnterLocationRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EnterLocation(),
+      );
+    },
+    FavoriteRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FavoriteScreen(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
+      );
+    },
+    ItemCategoryRoute.name: (routeData) {
+      final args = routeData.argsAs<ItemCategoryRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ItemCategoryScreen(
+          key: args.key,
+          data: args.data,
+        ),
+      );
+    },
     LocationRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -29,46 +63,32 @@ abstract class _$AppRouter extends RootStackRouter {
         child: LoginScreen(key: args.key),
       );
     },
+    NotificationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NotificationScreen(),
+      );
+    },
+    OffersRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OffersScreen(),
+      );
+    },
     OtpRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OtpScreen(),
       );
     },
-    EnterLocationRoute.name: (routeData) {
+    ProductRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EnterLocation(),
-      );
-    },
-    YallahSpaLayOutRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const YallahSpaLayOut(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomeScreen(),
-      );
-    },
-    FavoriteRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const FavoriteScreen(),
-      );
-    },
-    CardRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const CardScreen(),
-      );
-    },
-    OfferRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OffersScreen(),
+        child: ProductScreen(
+          key: args.key,
+          data: args.data,
+        ),
       );
     },
     SettingRoute.name: (routeData) {
@@ -77,19 +97,107 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SettingScreen(),
       );
     },
-    NotificationRoute.name: (routeData) {
+    YallahSpaLayOutRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const NotificationScreen(),
-      );
-    },
-    ItemCategoryRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child:  ItemCategoryScreen(),
+        child: const YallahSpaLayOut(),
       );
     },
   };
+}
+
+/// generated route for
+/// [CardScreen]
+class CardRoute extends PageRouteInfo<void> {
+  const CardRoute({List<PageRouteInfo>? children})
+      : super(
+          CardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CardRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EnterLocation]
+class EnterLocationRouter extends PageRouteInfo<void> {
+  const EnterLocationRouter({List<PageRouteInfo>? children})
+      : super(
+    EnterLocationRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EnterLocationRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FavoriteScreen]
+class FavoriteRoute extends PageRouteInfo<void> {
+  const FavoriteRoute({List<PageRouteInfo>? children})
+      : super(
+          FavoriteRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoriteRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ItemCategoryScreen]
+class ItemCategoryRoute extends PageRouteInfo<ItemCategoryRouteArgs> {
+  ItemCategoryRoute({
+    Key? key,
+    required HomeModel data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ItemCategoryRoute.name,
+          args: ItemCategoryRouteArgs(
+            key: key,
+            data: data,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ItemCategoryRoute';
+
+  static const PageInfo<ItemCategoryRouteArgs> page =
+      PageInfo<ItemCategoryRouteArgs>(name);
+}
+
+class ItemCategoryRouteArgs {
+  const ItemCategoryRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final HomeModel data;
+
+  @override
+  String toString() {
+    return 'ItemCategoryRouteArgs{key: $key, data: $data}';
+  }
 }
 
 /// generated route for
@@ -135,6 +243,34 @@ class LoginRouteArgs {
 }
 
 /// generated route for
+/// [NotificationScreen]
+class NotificationRoute extends PageRouteInfo<void> {
+  const NotificationRoute({List<PageRouteInfo>? children})
+      : super(
+          NotificationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NotificationRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OffersScreen]
+class OffersRoute extends PageRouteInfo<void> {
+  const OffersRoute({List<PageRouteInfo>? children})
+      : super(
+          OffersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OffersRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [OtpScreen]
 class OtpRoute extends PageRouteInfo<void> {
   const OtpRoute({List<PageRouteInfo>? children})
@@ -148,84 +284,46 @@ class OtpRoute extends PageRouteInfo<void> {
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-class EnterLocationRoute extends PageRouteInfo<void> {
-  const EnterLocationRoute({List<PageRouteInfo>? children})
-      : super(
-          EnterLocationRoute.name,
+/// generated route for
+/// [ProductScreen]
+class ProductRoute extends PageRouteInfo<ProductRouteArgs> {
+  ProductRoute({
+    Key? key,
+    required ProductData data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ProductRoute.name,
+          args: ProductRouteArgs(
+            key: key,
+            data: data,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'EnterLocationRoute';
+  static const String name = 'ProductRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ProductRouteArgs> page =
+      PageInfo<ProductRouteArgs>(name);
 }
 
-/// [yallah spa layout]
-class YallahSpaLayOutRoute extends PageRouteInfo<void> {
-  const YallahSpaLayOutRoute({List<PageRouteInfo>? children})
-      : super(
-          YallahSpaLayOutRoute.name,
-          initialChildren: children,
-        );
+class ProductRouteArgs {
+  const ProductRouteArgs({
+    this.key,
+    required this.data,
+  });
 
-  static const String name = 'YallahSpaLayOutRoute';
+  final Key? key;
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  final ProductData data;
+
+  @override
+  String toString() {
+    return 'ProductRouteArgs{key: $key, data: $data}';
+  }
 }
 
-/// [home Screen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// [favorites Screen]
-class FavoriteRoute extends PageRouteInfo<void> {
-  const FavoriteRoute({List<PageRouteInfo>? children})
-      : super(
-          FavoriteRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'FavoriteRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// [card Screen]
-class CardRoute extends PageRouteInfo<void> {
-  const CardRoute({List<PageRouteInfo>? children})
-      : super(
-          CardRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'CardRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// [offers Screen]
-class OfferRoute extends PageRouteInfo<void> {
-  const OfferRoute({List<PageRouteInfo>? children})
-      : super(
-          OfferRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OfferRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// [setting Screen]
+/// generated route for
+/// [SettingScreen]
 class SettingRoute extends PageRouteInfo<void> {
   const SettingRoute({List<PageRouteInfo>? children})
       : super(
@@ -238,28 +336,16 @@ class SettingRoute extends PageRouteInfo<void> {
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-/// [Notification Screen]
-class NotificationRoute extends PageRouteInfo<void> {
-  const NotificationRoute({List<PageRouteInfo>? children})
+/// generated route for
+/// [YallahSpaLayOut]
+class YallahSpaLayOutRouter extends PageRouteInfo<void> {
+  const YallahSpaLayOutRouter({List<PageRouteInfo>? children})
       : super(
-          NotificationRoute.name,
+    YallahSpaLayOutRouter.name,
           initialChildren: children,
         );
 
-  static const String name = 'NotificationRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// [Item Category Screen]
-class ItemCategoryRoute extends PageRouteInfo<void> {
-  const ItemCategoryRoute({List<PageRouteInfo>? children})
-      : super(
-    ItemCategoryRoute.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'ItemCategoryRoute';
+  static const String name = 'YallahSpaLayOutRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

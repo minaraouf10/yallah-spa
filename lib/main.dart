@@ -6,7 +6,7 @@ import 'package:yal_spa/generated/translations.g.dart';
 
 import 'core/data/locale/pref.dart';
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefs.init();
   runApp(
@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: appRouter.config(),
-      title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Almarai',
         primarySwatch: Colors.blue,

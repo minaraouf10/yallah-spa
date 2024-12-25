@@ -19,11 +19,11 @@ class OtpScreen extends ConsumerWidget {
   const OtpScreen({super.key});
 
   @override
-  Widget build(BuildContext context,ref) {
+  Widget build(BuildContext context, ref) {
     final otpProvider = ref.read(otpProviderScreen);
 
     ref.listen(otpProvider.isSuccess.provider, (_, state) {
-      if (state ) {
+      if (state) {
         context.pushRoute(const LocationRoute());
       }
     });
@@ -114,8 +114,9 @@ class OtpScreen extends ConsumerWidget {
                   const Height(24.0),
                   CustomButton(
                     title: 'تاكيد',
+                     isLoading:  ref.watch(otpProvider.isLoading.provider),
                     textStyle: const TextStyle(
-                        fontFamily: "Almarai",
+                        fontFamily: 'Almarai',
                         fontSize: 16.0,
                         color: AppColors.white),
                     onPress: () {

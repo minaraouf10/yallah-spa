@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpWidget {
-  static var code = "";
+  static var code = '';
   static final defaultPinTheme = PinTheme(
     width: 56,
     height: 56,

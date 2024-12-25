@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yal_spa/core/config/widgets/custom_sized_box.dart';
 import 'package:yal_spa/features/home/presstion/widget/category/category.dart';
 import 'package:yal_spa/features/home/presstion/widget/smooth_page.dart';
+
 import 'widget/search.dart';
 import 'widget/top_screen.dart';
 

@@ -18,10 +18,8 @@ class ItemServiceTeam extends StatelessWidget {
           Container(
             padding: EdgeInsetsDirectional.all(8.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadiusDirectional.circular(5),
-              border:
-                Border.all(color: AppColors.textPlaceholder)
-            ),
+                borderRadius: BorderRadiusDirectional.circular(5),
+                border: Border.all(color: AppColors.textPlaceholder)),
             child: Row(
               children: [
                 Image.asset(
@@ -33,11 +31,15 @@ class ItemServiceTeam extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('مريم احمد ',
-                    style: context.bold12TextMain,),
+                    Text(
+                      'مريم احمد ',
+                      style: context.bold12TextMain,
+                    ),
                     const Height(6.0),
-                    Text('+ 6 سنوات من الخبرة',style:
-                      context.regular12TextSub,)
+                    Text(
+                      '+ 6 سنوات من الخبرة',
+                      style: context.regular12TextSub,
+                    )
                   ],
                 )
               ],

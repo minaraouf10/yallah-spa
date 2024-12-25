@@ -4,7 +4,6 @@ import '../../../../core/api_helper/custom_response.dart';
 import '../../../../core/api_helper/dio_client.dart';
 import '../../../../core/api_helper/dio_providers.dart';
 import '../../../../core/api_helper/endpoints.dart';
-import '../../../../core/config/utils/custom_state.dart';
 import '../../../../core/data/locale/user_pref.dart';
 import '../model/user_model.dart';
 
@@ -19,8 +18,6 @@ class AuthService {
   final UserPrefs prefs;
 
   AuthService(this.client, {required this.prefs});
-
-
 
   Future<DataModel?> login(String phone) async {
     final body = {
@@ -50,8 +47,7 @@ class AuthService {
     }
   }
 
-
-  Future<DataModel?> otp(String phone,String otp) async {
+  Future<DataModel?> otp(String phone, String otp) async {
     final body = {
       'phone': phone,
       'otp': otp,
@@ -79,8 +75,6 @@ class AuthService {
       throw 'Invalid response: Unexpected data format';
     }
   }
-
-
 
   Future<void> signUp(
       String name, String email, String password, String phone) async {

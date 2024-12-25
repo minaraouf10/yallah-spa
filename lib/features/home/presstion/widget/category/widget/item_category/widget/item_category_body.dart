@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yal_spa/core/config/extensions/context_extensions.dart';
@@ -7,15 +8,18 @@ import 'package:yal_spa/core/config/router/router.dart';
 import 'package:yal_spa/core/config/themes/app_colors.dart';
 import 'package:yal_spa/core/config/utils/assets_manager.dart';
 import 'package:yal_spa/core/config/widgets/custom_sized_box.dart';
-import 'package:yal_spa/features/card/presstion/widget/search.dart';
 import 'package:yal_spa/features/home/presstion/widget/category/widget/item_category/widget/item_service_team.dart';
+import 'package:yal_spa/features/home/presstion/widget/category/widget/item_category/widget/product_item.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
 
 import '../../../../../../../../core/config/widgets/custom_text_form_field.dart';
 import '../../../../../../../../generated/translations.g.dart';
-@RoutePage()
+import '../../../../../../data/model/home_screen_model.dart';
+
 class ItemCategoryBody extends StatelessWidget {
-  const ItemCategoryBody({super.key});
+  const ItemCategoryBody({super.key, required this.data});
+
+  final HomeModel data;
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +29,19 @@ class ItemCategoryBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'المكياجُ والرموشُ',
+            data.nameAR,
             style: context.bold18TextMain,
           ),
           const Height(12.0),
           Text(
-            'احصلي على مكياجٍ مُتقنٍ يُبرزُ جمالكِ الطبيعيّ ويُضفي إطلالةً ساحرةً عليكِ في أيّ مناسبةٍ.',
+            data.descriptionAR,
             style: context.regular14TextSub,
           ),
           const Height(16.0),
-          GestureDetector(
-            onTap: (){
+          InkWell(
+            onTap: () {
               context.showBottomSheet(
-                bottomSheetBody:ItemServiceTeam(),
+                bottomSheetBody: ItemServiceTeam(),
               );
             },
             child: Container(
@@ -67,13 +71,34 @@ class ItemCategoryBody extends StatelessWidget {
             ),
           ),
           const Height(16.0),
-           CustomTextFormField(
+          CustomTextFormField(
             hint: tr.search,
             isEnglish: TextAlign.right,
-            prefixIconPath:AssetsManger.searchIcon,
+            prefixIconPath: AssetsManger.searchIcon,
             prefixIconColor: AppColors.textPlaceholder,
             suffixIconScale: 0.6,
           ),
+          Height(16.0),
+          Wrap(
+              spacing: 10.0,
+              runSpacing: 10.0,
+              children: data.products.map(
+                (item) {
+                  return SizedBox(
+                    child: InkWell(
+                      onTap: () {
+                        log('enter product screen');
+                        context.pushRoute(
+                          ProductRoute(data: item),
+                        );
+                      },
+                      child: ProductItem(
+                        data: item,
+                      ),
+                    ),
+                  );
+                },
+              ).toList()),
         ],
       ),
     );

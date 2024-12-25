@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,7 +30,7 @@ class LoginScreen extends ConsumerWidget {
     });
 
     ref.listen(loginProvider.isSuccess.provider, (_, state) {
-      if (state ) {
+      if (state) {
         context.pushRoute(const OtpRoute());
       }
     });
@@ -79,7 +77,7 @@ class LoginScreen extends ConsumerWidget {
                     ),
                   ),
                   const Height(5.0),
-                   CustomTextFormField(
+                  CustomTextFormField(
                     hint: 'أدخل رقم جوالك هنا',
                     controller: loginProvider.phoneController,
                     isEnglish: TextAlign.right,
@@ -109,7 +107,7 @@ class LoginScreen extends ConsumerWidget {
                       const Text(
                         'أوافق على الشروط والأحكام',
                         style: TextStyle(
-                            fontFamily: "Almarai",
+                            fontFamily: 'Almarai',
                             fontSize: 12.0,
                             color: AppColors.textPlaceholder),
                       ),
@@ -119,18 +117,16 @@ class LoginScreen extends ConsumerWidget {
                   Consumer(
                     builder:
                         (BuildContext context, WidgetRef ref, Widget? child) {
-
                       return CustomButton(
                         isLoading: ref.watch(loginProvider.isLoading.provider),
                         title: 'دخول',
                         textStyle: const TextStyle(
-                            fontFamily: "Almarai",
+                            fontFamily: 'Almarai',
                             fontSize: 16.0,
                             color: AppColors.white),
                         onPress: () {
-                         // context.pushRoute(const OtpRoute());
+                          // context.pushRoute(const OtpRoute());
                           loginProvider.userLogin();
-
                         },
                       );
                     },

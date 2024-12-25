@@ -57,7 +57,7 @@ class LocationScreen extends StatelessWidget {
             CustomButton(
               title: 'السماح بالوصول إلى الموقع',
               onPress: () {
-                context.pushRoute(const YallahSpaLayOutRoute());
+                context.pushRoute(const YallahSpaLayOutRouter());
               },
               textStyle: const TextStyle(
                 fontSize: 16.0,
@@ -68,7 +68,7 @@ class LocationScreen extends StatelessWidget {
             const Height(12.0),
             InkWell(
               onTap: () {
-                context.pushRoute(const EnterLocationRoute());
+                context.pushRoute(const EnterLocationRouter());
               },
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,

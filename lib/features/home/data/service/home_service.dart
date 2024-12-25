@@ -1,6 +1,6 @@
-import 'dart:developer';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yal_spa/features/home/data/model/home_screen_model.dart';
+
 import '../../../../core/api_helper/custom_response.dart';
 import '../../../../core/api_helper/dio_client.dart';
 import '../../../../core/api_helper/dio_providers.dart';
@@ -20,7 +20,6 @@ class AuthService {
 
   AuthService(this.client, {required this.prefs});
 
-
   Future<List<HomeModel>> getServicesData() async {
     final res = CustomResponse(await client.get(Endpoints.services));
 
@@ -28,21 +27,15 @@ class AuthService {
 
     if (res.data is List) {
       final List data = res.data as List;
-      final homeModels = data.map((e) => HomeModel.fromJson(e as Json)).toList();
+      final homeModels =
+          data.map((e) => HomeModel.fromJson(e as Json)).toList();
       return homeModels;
-    }
-    else if (res.data is Json) {
+    } else if (res.data is Json) {
       final data = res.data as Map<String, dynamic>;
       final homeModel = HomeModel.fromJson(data);
       return [homeModel]; // نضع كائن HomeModel في قائمة
-    }
-
-    else {
+    } else {
       throw 'Invalid response: Unexpected data format';
     }
   }
-
-
-
-
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.yal_spa.app-mergeDebugResources-8:/values-v31/values-v31.xml",
+            "outputFile": "com.example.yal_spa.app-mergeDebugResources-24:/values-v31/values-v31.xml",
             "map": [
                 {
                     "source": "D:\\android_project\\yal_spa\\android\\app\\src\\main\\res\\values-v31\\styles.xml",

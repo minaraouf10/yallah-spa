@@ -3,9 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 import '../../../../../core/config/utils/custom_state.dart';
-import '../../../../../generated/translations.g.dart';
 import '../../../data/service/auth_service.dart';
 
 final loginProviderScreen = Provider<LoginLogic>(
@@ -58,8 +56,6 @@ class LoginLogic extends _LoginStates {
       isLoading.state = false;
     }
   }
-
-
 }
 
 class _LoginStates {

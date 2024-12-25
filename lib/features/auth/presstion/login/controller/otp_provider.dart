@@ -38,7 +38,8 @@ class OTPLogic extends _OTPStates {
 
       if (data?.user != null) {
         isSuccess.state = true;
-        log('User logged in successfully: ${data?.user.name}', name: 'otpController');
+        log('User logged in successfully: ${data?.user.name}',
+            name: 'otpController');
       } else {
         isSuccess.state = true;
         isError.state = 'No user data received.';
@@ -59,8 +60,8 @@ class _OTPStates {
   final CustomState<String> isError;
   final CustomState<bool> isSuccess;
 
-  _OTPStates({required this.ref}) :
-        isLoading = CustomState<bool>(ref, false),
+  _OTPStates({required this.ref})
+      : isLoading = CustomState<bool>(ref, false),
         isError = CustomState<String>(ref, ''),
         isSuccess = CustomState<bool>(ref, false);
 }

@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yal_spa/features/bottom_nav/future_provider_screen.dart';
@@ -32,14 +31,16 @@ class Category extends ConsumerWidget {
               runSpacing: 10.0,
               children: data.map((item) {
                 return SizedBox(
-                  width: MediaQuery.of(context).size.width / 3 - 17,
+                 // width: MediaQuery.of(context).size.width / 2 - 17,
                   child: CategoryItem(
                     image: item.image,
                     title: item.nameAR,
+                    data: item,
                   ),
                 );
               }).toList(),
             ),
+            Height(50.0),
           ],
         );
       },

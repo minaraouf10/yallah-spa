@@ -29,16 +29,6 @@ class HomeModel {
             .toList(),
       );
 
-  // {
-  //   id = json['id'];
-  //   nameAR = json['name_ar'];
-  //   nameENG = json['name_en'];
-  //   descriptionEnG = json['description_en'];
-  //   descriptionAR = json['description_ar'];
-  //   image = json['image'];
-  //   products = (json['products'] as List).map((e) => ProductData.fromJson(e)).toList();
-  // }
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
@@ -62,10 +52,10 @@ class ProductData {
   final String serviceNameAR;
   final String serviceNameEN;
   final String target;
-  final List type;
-  final List time;
-  final List frequency;
-  final List gallery;
+  final List <TypeData>type;
+  final List<TimeData> time;
+  final List<FrequencyData> frequency;
+  final List <GalleryData>gallery;
 
   ProductData({
     required this.id,
@@ -104,25 +94,6 @@ class ProductData {
             .map((e) => GalleryData.fromJson(e))
             .toList(),
       );
-// {
-//    id = json['id'];
-//    nameAR = json['name_ar'];
-//    nameENG = json['name_en'];
-//    descriptionEnG = json['description_en'];
-//    descriptionAR = json['description_ar'];
-//    classs = json['class'];
-//    binfites = json['binfites'];
-//    target = json['target'];
-//    serviceNameAR = json['service_name_ar'];
-//    serviceNameEN = json['service_name_en'];
-//    type = (json['type'] as List).map((e) => TypeData.fromJson(e)).toList();
-//    time = (json['time'] as List).map((e) => TimeData.fromJson(e)).toList();
-//    frequency = (json['frequency'] as List)
-//        .map((e) => FrequencyData.fromJson(e))
-//        .toList();
-//    gallery =
-//        (json['gallery'] as List).map((e) => GalleryData.fromJson(e)).toList();
-//  }
 }
 
 class TypeData {
@@ -141,11 +112,7 @@ class TypeData {
         typeName: json['name'] as String,
         typeDescription: json['description'] as String,
       );
-// {
-//   typeId = json['id'];
-//   typeName = json['name'];
-//   typeDescription = json['description'];
-// }
+
 }
 
 class TimeData {
@@ -164,11 +131,7 @@ class TimeData {
         timeName: json['name'] as String,
         timePrice: json['price'] as String,
       );
-// {
-//   timeId = json['id'];
-//   timeName = json['name'];
-//   timePrice = json['price'];
-// }
+
 }
 
 class FrequencyData {
@@ -208,8 +171,4 @@ class GalleryData {
         galleryId: json['id'] as int,
         galleryURL: json['url'] as String,
       );
-// {
-//   galleryId = json['id'];
-//   galleryURL = json['url'];
-// }
 }

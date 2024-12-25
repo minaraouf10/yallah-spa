@@ -1,50 +1,50 @@
 [
     {
-        "merged": "com.example.yal_spa.app-debug-10:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.example.yal_spa.app-debug-26:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-v21_background.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-v21/background.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-xxhdpi_splash.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-xxhdpi/splash.png"
+        "merged": "com.example.yal_spa.app-debug-26:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-hdpi_splash.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-hdpi/splash.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-hdpi_splash.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-hdpi/splash.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-v21_background.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-v21/background.png"
+        "merged": "com.example.yal_spa.app-debug-26:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-v21/launch_background.xml"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-xxhdpi_splash.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-xxhdpi/splash.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-xhdpi_splash.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-xhdpi/splash.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-mdpi_splash.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-mdpi/splash.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-mdpi_splash.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-mdpi/splash.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-xhdpi_splash.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-xhdpi/splash.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.yal_spa.app-debug-26:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.example.yal_spa.app-debug-26:/drawable-xxxhdpi_splash.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/drawable-xxxhdpi/splash.png"
     },
     {
-        "merged": "com.example.yal_spa.app-debug-10:/drawable-xxxhdpi_splash.png.flat",
-        "source": "com.example.yal_spa.app-main-5:/drawable-xxxhdpi/splash.png"
+        "merged": "com.example.yal_spa.app-debug-26:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.yal_spa.app-main-21:/mipmap-hdpi/ic_launcher.png"
     }
 ]
