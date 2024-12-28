@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Import Riverpod
 import 'package:yal_spa/core/config/router/router.dart';
+import 'package:yal_spa/core/config/themes/app_theme.dart';
 import 'package:yal_spa/generated/translations.g.dart';
 
 import 'core/data/locale/pref.dart';
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Almarai',
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: AppTheme.scaffoldBackground,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppTheme.scaffoldBackground
+      )
       ),
       locale: const Locale('ar', 'AE'),
       supportedLocales: const [

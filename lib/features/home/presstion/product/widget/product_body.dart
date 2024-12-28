@@ -90,24 +90,31 @@ class ProductBody extends ConsumerWidget {
           Height(35.0),
           Row(
             children: [
-              CustomButton(title: 'احجزي الآن', onPress: (){},
-              width: 180.0,
+              CustomButton(
+                title: 'احجزي الآن',
+                onPress: () {},
+                width: 170.0,
                 height: 48.0,
                 suffixIconPath: AssetsManger.bookOrder,
-
               ),
               Width(10.0),
               InkWell(
-                splashColor:Colors.transparent ,
-                highlightColor: Colors.transparent,
-                onTap: (){},
-                  child: SvgPicture.asset(AssetsManger.cardButton,height: 48.0,)),
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () {},
+                  child: SvgPicture.asset(
+                    AssetsManger.cardButton,
+                    height: 48.0,
+                  )),
               Width(15.0),
               Column(
                 children: [
                   Row(
                     children: [
-                      Text('السعر',style: context.regular14TextSub,),
+                      Text(
+                        'السعر',
+                        style: context.regular14TextSub,
+                      ),
                       Width(10.0),
                       SvgPicture.asset(AssetsManger.arrowLeftIcon)
                     ],

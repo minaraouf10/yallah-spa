@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     this.elevation = 0.0,
     this.centerTitle = true,
+    this.back = true,
   });
 
   final String? title;
@@ -21,15 +22,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final double elevation;
   final bool centerTitle;
+  final bool back;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
       title: title != null ? Text(title!) : null,
-      backgroundColor:backgroundColor != null ? backgroundColor :Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: backgroundColor != null ? backgroundColor : Theme.of(context).scaffoldBackgroundColor,
       actions: actions,
-      leading: Transform.scale(
+      leading: back
+          ? Transform.scale(
         scale: 0.45,
         child: InkWell(
           onTap: () {
@@ -39,13 +42,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             AssetsManger.arrowRight,
           ),
         ),
-      ),
+      )
+          : null,
       elevation: elevation,
       centerTitle: centerTitle,
     );
   }
 
-  // Override the preferredSize getter to define the size of the AppBar
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

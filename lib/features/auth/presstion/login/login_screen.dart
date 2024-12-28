@@ -16,11 +16,14 @@ import 'controller/login_provider_screen.dart';
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
 
-  bool? isChecked = false;
+
 
   @override
   Widget build(BuildContext context, ref) {
     final loginProvider = ref.watch(loginProviderScreen);
+    bool isChecked = ref.watch(loginProvider.isChecked.provider) ;
+
+    ref.watch(loginProvider.isChecked.provider);
 
     ref.listen(loginProvider.isError.provider, (_, state) {
       context.showCustomSnackBar(
@@ -90,20 +93,21 @@ class LoginScreen extends ConsumerWidget {
                   const Height(24.0), //
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Transform.scale(
-                        scale: 0.8,
-                        child: Checkbox(
-                          value: isChecked,
-                          tristate: true,
-                          activeColor: AppColors.white,
-                          checkColor: AppColors.primary,
-                          side: const BorderSide(color: Colors.grey, width: 2),
-                          onChanged: (newBool) {
-                            isChecked = newBool;
-                          },
-                        ),
-                      ),
+                    children: [(
+                        Transform.scale(
+                          scale: 0.8,
+                          child: Checkbox(
+                            value: ref.watch(loginProvider.isChecked.provider),
+                            tristate: true,
+                            activeColor: AppColors.white,
+                            checkColor: AppColors.primary,
+                            side: const BorderSide(color: Colors.grey, width: 2),
+                            onChanged: (newBool) {
+                              ref.read(loginProvider.isChecked.provider.notifier).state = newBool ?? false;
+                            },
+                          ),
+                        )
+                  ),
                       const Text(
                         'أوافق على الشروط والأحكام',
                         style: TextStyle(
@@ -114,21 +118,15 @@ class LoginScreen extends ConsumerWidget {
                     ],
                   ),
                   const Height(24.0),
-                  Consumer(
-                    builder:
-                        (BuildContext context, WidgetRef ref, Widget? child) {
-                      return CustomButton(
-                        isLoading: ref.watch(loginProvider.isLoading.provider),
-                        title: 'دخول',
-                        textStyle: const TextStyle(
-                            fontFamily: 'Almarai',
-                            fontSize: 16.0,
-                            color: AppColors.white),
-                        onPress: () {
-                          // context.pushRoute(const OtpRoute());
-                          loginProvider.userLogin();
-                        },
-                      );
+                  CustomButton(
+                    isLoading: ref.watch(loginProvider.isLoading.provider),
+                    title: 'دخول',
+                    textStyle: const TextStyle(
+                        fontFamily: 'Almarai',
+                        fontSize: 16.0,
+                        color: AppColors.white),
+                    onPress: () {
+                      loginProvider.userLogin();
                     },
                   ),
                   const Height(12.0),

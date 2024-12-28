@@ -36,4 +36,16 @@ class AssetsManger {
   static const notificationsIcon = '${iconsPath}notifications.svg';
   static const arrowLeftIcon = '${iconsPath}arrow-left.svg';
   static const bookOrder = '${iconsPath}shopping-cart.svg';
+  static const editProfile = '${iconsPath}edit_profile.svg';
+  static const aboutApp = '${iconsPath}about_app.svg';
+  static const articles = '${iconsPath}Articles.svg';
+  static const conditions = '${iconsPath}conditions.svg';
+  static const contactUs = '${iconsPath}Contact_us.svg';
+  static const deleteAccount = '${iconsPath}delete.svg';
+  static const editImage = '${iconsPath}edit_image.svg';
+  static const changeLanguage = '${iconsPath}lang.svg';
+  static const logOut = '${iconsPath}log_out.svg';
+  static const orders = '${iconsPath}orders.svg';
+  static const privacy = '${iconsPath}Privacy.svg';
+  static const shareApp = '${iconsPath}share_app.svg';
 }

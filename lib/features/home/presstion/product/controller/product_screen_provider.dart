@@ -54,5 +54,5 @@ class _ProductScreenProviderStates {
   _ProductScreenProviderStates({required this.ref})
       : isLoading = CustomState<bool>(ref, false),
         isError = CustomState<String>(ref, ''),
-        count = CustomState<int>(ref, 5);
+        count = CustomState<int>(ref, 1);
 }

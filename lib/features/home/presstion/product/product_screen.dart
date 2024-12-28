@@ -23,6 +23,7 @@ class ProductScreen extends StatelessWidget {
                   data.gallery[0].galleryURL,
                   fit: BoxFit.cover,
                   width: double.infinity,
+                  height: 200,
                 ),
                 CustomAppBar(
                   backgroundColor: Colors.transparent,

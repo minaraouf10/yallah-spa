@@ -63,9 +63,11 @@ class _LoginStates {
   final CustomState<bool> isLoading;
   final CustomState<String> isError;
   final CustomState<bool> isSuccess;
+  final CustomState<bool>  isChecked;
 
   _LoginStates({required this.ref})
       : isLoading = CustomState<bool>(ref, false),
         isError = CustomState<String>(ref, ''),
-        isSuccess = CustomState<bool>(ref, false);
+        isSuccess = CustomState<bool>(ref, false),
+        isChecked = CustomState<bool>(ref, false);
 }
