@@ -1,0 +1,16 @@
+D:/android_project/yal_spa/build/windows/x64/CMakeFiles/INSTALL.dir
+D:/android_project/yal_spa/build/windows/x64/CMakeFiles/ALL_BUILD.dir
+D:/android_project/yal_spa/build/windows/x64/CMakeFiles/ZERO_CHECK.dir
+D:/android_project/yal_spa/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+D:/android_project/yal_spa/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_app.dir
+D:/android_project/yal_spa/build/windows/x64/flutter/CMakeFiles/flutter_assemble.dir
+D:/android_project/yal_spa/build/windows/x64/flutter/CMakeFiles/INSTALL.dir
+D:/android_project/yal_spa/build/windows/x64/runner/CMakeFiles/yal_spa.dir
+D:/android_project/yal_spa/build/windows/x64/runner/CMakeFiles/INSTALL.dir
+D:/android_project/yal_spa/build/windows/x64/runner/CMakeFiles/ALL_BUILD.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/connectivity_plus/CMakeFiles/connectivity_plus_plugin.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/connectivity_plus/CMakeFiles/INSTALL.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/connectivity_plus/CMakeFiles/ALL_BUILD.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/flutter_localization/CMakeFiles/flutter_localization_plugin.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/flutter_localization/CMakeFiles/INSTALL.dir
+D:/android_project/yal_spa/build/windows/x64/plugins/flutter_localization/CMakeFiles/ALL_BUILD.dir

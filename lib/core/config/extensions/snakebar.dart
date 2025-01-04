@@ -1,8 +1,9 @@
 // import 'package:dr_ayman_tharwat/app/core/enums/popup_duration.dart';
 // import 'package:dr_ayman_tharwat/app/core/enums/snakebar_type.dart';
-// import 'package:dr_ayman_tharwat/app/core/themes/app_colors.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
+//
+// import '../themes/app_colors.dart';
 //
 // extension Snakebar on BuildContext {
 //   void showSnakebar(

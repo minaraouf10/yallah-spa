@@ -70,7 +70,7 @@ class CustomTextFormField extends StatelessWidget {
             child: Text(
               title!,
               style: AppTextStyles.titleTextStyle.copyWith(
-                fontSize: 16,
+                fontSize: 18,
                 color: AppColors.black,
               ),
             ),

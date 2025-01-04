@@ -8,14 +8,21 @@ import 'package:yal_spa/features/home/data/model/home_screen_model.dart';
 import 'package:yal_spa/features/home/presstion/home_screen.dart';
 import 'package:yal_spa/features/notification/notification_screen.dart';
 import 'package:yal_spa/features/offers/presstion/offers_screen.dart';
+import 'package:yal_spa/features/setting/presstion/articles/widget/articles_item_body.dart';
 import 'package:yal_spa/features/setting/presstion/setting_screen.dart';
 
 import '../../../features/auth/presstion/login/otp_screen.dart';
 import '../../../features/home/presstion/product/product_screen.dart';
 import '../../../features/home/presstion/widget/category/widget/item_category/item_category_screen.dart';
-import '../../../features/home/presstion/widget/category/widget/item_category/widget/item_category_body.dart';
 import '../../../features/location/presstion/enter_location.dart';
 import '../../../features/location/presstion/location_screen.dart';
+import '../../../features/setting/presstion/about_app/about_app_screen.dart';
+import '../../../features/setting/presstion/articles/articles_screen.dart';
+import '../../../features/setting/presstion/contact_us/contact_us_screen.dart';
+import '../../../features/setting/presstion/ediit_profile/edit_profile_otp.dart';
+import '../../../features/setting/presstion/ediit_profile/edit_profile_screen.dart';
+import '../../../features/setting/presstion/privacy_policy/privacy_policy_screen.dart';
+import '../../../features/setting/presstion/terms_and_conditions/terms_conditionss_screen.dart';
 
 part 'router.gr.dart';
 
@@ -39,6 +46,14 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: NotificationRoute.page),
         AutoRoute(page: ItemCategoryRoute.page),
         AutoRoute(page: ProductRoute.page),
+        AutoRoute(page: EditProfileRouter.page),
+        AutoRoute(page: EditProfileOtpRouter.page),
+        AutoRoute(page: AboutAppRouter.page),
+        AutoRoute(page: TermsAndConditionsRouter.page),
+        AutoRoute(page: PrivacyPolicyRouter.page),
+        AutoRoute(page: ContactUsRouter.page),
+        AutoRoute(page: ArticlesRouter.page),
+        AutoRoute(page: ArticlesItemBodyRouter.page),
       ];
 
   List<AutoRouteGuard> get guards => [

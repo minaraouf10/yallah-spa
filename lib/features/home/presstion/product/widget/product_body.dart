@@ -37,6 +37,7 @@ class ProductBody extends ConsumerWidget {
           ),
           Height(16.0),
           Row(
+            spacing: 12.0,
             children: [
               InkWell(
                 onTap: () => productProvider.addNumberOfCount(),
@@ -51,12 +52,12 @@ class ProductBody extends ConsumerWidget {
                   ),
                 ),
               ),
-              Width(12.0),
+
               Text(
                 '${productProvider.count.state}',
                 style: context.bold16TextMain,
               ),
-              Width(11.0),
+
               InkWell(
                 onTap: () => productProvider.minusNumberOfCount(),
                 child: Container(

@@ -8,8 +8,8 @@ class AppColors {
   static const Color primary = Color(0xFF122E3E);
   static const Color primaryActive = Color(0xFF122E3E);
 
-  static const Color secondaryLight = Color(0xFFEDF7FC);
-  static const Color secondary = Color(0xFF4EB0E2);
+  static const Color secondaryLight = Color(0xFFE7EAEC);
+  static const Color secondary = Color(0xFF122E3E);
   static const Color secondaryDark = Color(0xFF3B84AA);
   static const Color blue = Color(0xFF2196F3);
 
@@ -32,7 +32,7 @@ class AppColors {
   static const Color danger = Color(0xFFE92727);
   static const Color dangerLight = Color(0xFFFDEEEE);
   static const Color success = Color(0xFF10B981);
-  static const Color successLight = Color(0xFFECF9F5);
+  static const Color successLight = Color(0xFFE7EAEC);
   static const Color warning = Color(0xFFF88F2D);
   static const Color warningLight = Color(0xFFF88F2D);
 

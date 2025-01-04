@@ -7,12 +7,15 @@ import 'package:yal_spa/generated/translations.g.dart';
 
 import 'core/data/locale/pref.dart';
 
+final globalRef = ProviderContainer();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefs.init();
   runApp(
-    ProviderScope(
-      child: TranslationProvider(
+    TranslationProvider(
+      child: UncontrolledProviderScope(
+        container: globalRef,
         child: MyApp(),
       ),
     ),

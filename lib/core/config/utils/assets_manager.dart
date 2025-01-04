@@ -8,10 +8,11 @@ class AssetsManger {
   static const smoothImage = '${imagePath}Frame 1171276638.png';
   static const serviceTeamImage = '${imagePath}Rectangle 17473.png';
   static const cardButton = '${imagePath}card-buttons.svg';
+  static const cardItemImage = '${imagePath}Rectangle 20193.png';
 
   //#endregion
 
-  //#region Mostafa
+  //#region
   static const exit = '${iconsPath}exit.svg';
   static const favoritesIcon = '${iconsPath}favorites_icon.svg';
 
@@ -48,4 +49,9 @@ class AssetsManger {
   static const orders = '${iconsPath}orders.svg';
   static const privacy = '${iconsPath}Privacy.svg';
   static const shareApp = '${iconsPath}share_app.svg';
+  static const phoneIcon = '${iconsPath}call-calling.svg';
+  static const emailIcon = '${iconsPath}sms.svg';
+  static const locationCardIcon = '${iconsPath}locationCardIcon.svg';
+  static const clockCardIcons = '${iconsPath}clockCardIcons.svg';
+  static const redTrashIcons = '${iconsPath}redTrash.svg';
 }

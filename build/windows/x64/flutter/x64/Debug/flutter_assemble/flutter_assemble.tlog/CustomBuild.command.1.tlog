@@ -1,0 +1,28 @@
+^D:\ANDROID_PROJECT\YAL_SPA\BUILD\WINDOWS\X64\CMAKEFILES\7589D53C2D92F6C435511C1D958EA88D\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env "FLUTTER_ROOT=D:\program_Cs\flutter 3.27.1\flutter_windows_3.27.1-stable\flutter" PROJECT_DIR=D:\android_project\yal_spa "FLUTTER_ROOT=D:\program_Cs\flutter 3.27.1\flutter_windows_3.27.1-stable\flutter" FLUTTER_EPHEMERAL_DIR=D:\android_project\yal_spa\windows\flutter\ephemeral PROJECT_DIR=D:\android_project\yal_spa FLUTTER_TARGET=D:\android_project\yal_spa\lib\main.dart DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\android_project\yal_spa\.dart_tool\package_config.json "D:/program_Cs/flutter 3.27.1/flutter_windows_3.27.1-stable/flutter/packages/flutter_tools/bin/tool_backend.bat" windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\ANDROID_PROJECT\YAL_SPA\BUILD\WINDOWS\X64\CMAKEFILES\6433941480809379F28085C57CE55BB5\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\ANDROID_PROJECT\YAL_SPA\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/android_project/yal_spa/windows -BD:/android_project/yal_spa/build/windows/x64 --check-stamp-file D:/android_project/yal_spa/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

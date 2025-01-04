@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 122 (61 per locale)
+/// Strings: 152 (76 per locale)
 ///
-/// Built on 2024-12-28 at 16:58 UTC
+/// Built on 2024-12-29 at 19:45 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,21 +148,32 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
+	String get Activation_code => 'رمز التفعيل';
 	String get Change_language => 'تغيير اللغة';
+	String get Contact_Information => 'معلومات الاتصال';
 	String get Contact_us   => 'تواصل معنا';
 	String get Delete_account => 'حذف الحساب';
 	String get Discover_the_best_foods_from_over => 'اكتشاف أفضل الأطعمة من أكثر من 1000';
 	String get Edit_your_personal_account_information => 'تعديل بيانات حسابك الشخصي';
+	String get Enter_your_email_here => 'ادخل بريدك الالكتروني هنا';
+	String get Enter_your_full_name_here => 'أدخل اسمك الكامل هنا';
+	String get Enter_your_message_here => 'أدخل رسالتك هنا';
+	String get Enter_your_number_here => 'ادخل رقمك هنا';
 	String get Fast_Delivery => 'توصيل سريع';
 	String get Fast_food_body => 'توصيل الوجبات السريعة إلى منزلك، مكتبك';
 	String get Fast_food_suBody => 'أينما تكون';
 	String get Find_Food_You_Love => 'ابحث عن الطعام الذي تحبه';
+	String get Full_name => 'الاسم بالكامل';
 	String get Live_Tracking => 'تتبع مباشر';
 	String get Live_Tracking_body => 'تتبع طعامك في الوقت الحقيقي على التطبيق';
 	String get Live_Tracking_suBody => 'بمجرد تقديم الطلب';
 	String get Log_out => 'تسجيل خروج';
 	String get Makeup_and_eyelashes => 'المكياجُ والرموشُ';
+	String get Mobile_number => 'رقم الجوال';
+	String get Resend => 'إعادة إرسال';
 	String get Share_app => 'شارك التطبيق';
+	String get To_modify_your_personal_account_information => 'لتعديل بيانات حسابك الشخصي';
+	String get We_have_sent_the_activation_code_to_the_number => 'لقد قمنا بإرسال رمز التفعيل إلى الرقم';
 	String get Your_beauty_is_a_journey_that_begins_with_our_services => ' جمالكِ رحلةٌ تبدأُ بخدماتِنا!';
 	String get abouut_app => 'حول التطبيق';
 	String get add_details_login => 'أضف التفاصيل الخاصة بك لتسجيل الدخول';
@@ -172,6 +183,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get ahmed => 'احمد';
 	String get already_have_an_account => 'هل لديك حساب؟';
 	String get articles => 'المقالات';
+	String get back => 'عوده';
 	String get card => 'السلة';
 	String get confirm_password => 'تأكيد كلمة المرور';
 	String get confirm_password_not_empty => 'يجب ألا يكون تأكيد كلمة المرور فارغًا';
@@ -179,7 +191,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get delivery_to => 'التوصيل إلى';
 	String get discover_the_best_foods => 'اكتشف أفضل الأطعمة من أكثر من 1000';
 	String get donot_have_an_account  => 'ليس لديك حساب؟';
-	String get email => 'بريدك الالكتروني';
+	String get email => 'البريد الالكتروني';
 	String get email_not_empty => 'يجب ألا يكون البريد الإلكتروني فارغًا';
 	String get enter_your_phone_number => 'ادخل رقم هاتفك';
 	String get error_occurred => 'حدث خطأ';
@@ -189,6 +201,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get invalid_field => 'حقل غير صالح';
 	String get login => 'تسجيل الدخول';
 	String get login_with => 'أو تسجيل الدخول باستخدام';
+	String get message => 'الرسالة';
 	String get mobile => 'رقم المحمول';
 	String get mobile_not_must_empty => 'يجب ألا يكون رقم الهاتف المحمول فارغًا';
 	String get name => 'الاسم';
@@ -203,11 +216,13 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get privacy_policy  => 'سياسة الخصوصية';
 	String get restaurants_and_fast_delivery => 'مطاعم و توصيل سريع الي باب بيتك';
 	String get restaurants_and_fast_delivery_to_your_doorstep => 'المطاعم والتوصيل السريع إلى عتبة داركم';
+	String get save => 'حفظ';
 	String get search => 'ابحث';
 	String get search_country => 'ابحث عن الدوله';
 	String get settings => 'الإعدادات';
 	String get sign_up => 'انشاء حساب';
 	String get something_error_try_again => 'حدث خطأ ما يرجى المحاولة مرة أخرى';
+	String get sure => 'تأكيد';
 	String get terms_and_conditions  => 'الأحكام والشروط';
 }
 
@@ -235,21 +250,32 @@ class _TranslationsEn implements Translations {
 	@override late final _TranslationsEn _root = this; // ignore: unused_field
 
 	// Translations
+	@override String get Activation_code => 'Activation code';
 	@override String get Change_language => 'Change language';
+	@override String get Contact_Information => 'Contact Information';
 	@override String get Contact_us   => 'Contact us';
 	@override String get Delete_account => 'Delete account';
 	@override String get Discover_the_best_foods_from_over => 'Discover the best foods from over 1,000 ';
 	@override String get Edit_your_personal_account_information => 'Edit your personal account information';
+	@override String get Enter_your_email_here => 'Enter your email here';
+	@override String get Enter_your_full_name_here => 'Enter your full name here';
+	@override String get Enter_your_message_here => 'Enter your message here';
+	@override String get Enter_your_number_here => 'Enter your number here';
 	@override String get Fast_Delivery => 'Fast Delivery';
 	@override String get Fast_food_body => 'Fast food delivery to your home, office ';
 	@override String get Fast_food_suBody => 'wherever you are';
 	@override String get Find_Food_You_Love => 'Find Food You Love';
+	@override String get Full_name => 'Full name';
 	@override String get Live_Tracking => 'Live Tracking';
 	@override String get Live_Tracking_body => 'Real time tracking of your food on the app ';
 	@override String get Live_Tracking_suBody => 'once you placed the order';
 	@override String get Log_out => 'Delete_account';
 	@override String get Makeup_and_eyelashes => 'Makeup and eyelashes';
+	@override String get Mobile_number => 'Mobile number';
+	@override String get Resend => 'Resend';
 	@override String get Share_app => 'Share app';
+	@override String get To_modify_your_personal_account_information => 'To modify your personal account information';
+	@override String get We_have_sent_the_activation_code_to_the_number => 'We have sent the activation code to the number';
 	@override String get Your_beauty_is_a_journey_that_begins_with_our_services => 'Your beauty is a journey that begins with our services!';
 	@override String get abouut_app => 'About  app';
 	@override String get add_details_login => 'Add your details to login';
@@ -259,6 +285,7 @@ class _TranslationsEn implements Translations {
 	@override String get ahmed => 'Ahmed';
 	@override String get already_have_an_account => 'Already have an Account?';
 	@override String get articles => 'Articles';
+	@override String get back => 'Back';
 	@override String get card => 'Card';
 	@override String get confirm_password => 'Confirm Password';
 	@override String get confirm_password_not_empty => 'confirm password must not empty';
@@ -266,7 +293,7 @@ class _TranslationsEn implements Translations {
 	@override String get delivery_to => 'Delivery to';
 	@override String get discover_the_best_foods => 'Discover the best foods from over 1,000 ';
 	@override String get donot_have_an_account  => 'Don\'t have an Account? ';
-	@override String get email => 'Your Email';
+	@override String get email => 'Email';
 	@override String get email_not_empty => 'email must not empty';
 	@override String get enter_your_phone_number => 'Enter your phone number';
 	@override String get error_occurred => 'Error Occurred';
@@ -276,6 +303,7 @@ class _TranslationsEn implements Translations {
 	@override String get invalid_field => 'Invalid field';
 	@override String get login => 'Login';
 	@override String get login_with => 'or Login With';
+	@override String get message => 'message';
 	@override String get mobile => 'Mobile No';
 	@override String get mobile_not_must_empty => 'mobile number must not empty';
 	@override String get name => 'Name';
@@ -290,11 +318,13 @@ class _TranslationsEn implements Translations {
 	@override String get privacy_policy  => 'privacy policy';
 	@override String get restaurants_and_fast_delivery => 'restaurants and fast delivery to your doorstep';
 	@override String get restaurants_and_fast_delivery_to_your_doorstep => 'restaurants and fast delivery to your doorstep';
+	@override String get save => 'Save';
 	@override String get search => 'Search';
 	@override String get search_country => 'Search country';
 	@override String get settings => 'Settings';
 	@override String get sign_up => 'Sign Up';
 	@override String get something_error_try_again => 'Something Happened Error Please Try Again';
+	@override String get sure => 'Sure';
 	@override String get terms_and_conditions  => 'terms and conditions';
 }
 
@@ -304,21 +334,32 @@ class _TranslationsEn implements Translations {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'Activation_code': return 'رمز التفعيل';
 			case 'Change_language': return 'تغيير اللغة';
+			case 'Contact_Information': return 'معلومات الاتصال';
 			case 'Contact_us  ': return 'تواصل معنا';
 			case 'Delete_account': return 'حذف الحساب';
 			case 'Discover_the_best_foods_from_over': return 'اكتشاف أفضل الأطعمة من أكثر من 1000';
 			case 'Edit_your_personal_account_information': return 'تعديل بيانات حسابك الشخصي';
+			case 'Enter_your_email_here': return 'ادخل بريدك الالكتروني هنا';
+			case 'Enter_your_full_name_here': return 'أدخل اسمك الكامل هنا';
+			case 'Enter_your_message_here': return 'أدخل رسالتك هنا';
+			case 'Enter_your_number_here': return 'ادخل رقمك هنا';
 			case 'Fast_Delivery': return 'توصيل سريع';
 			case 'Fast_food_body': return 'توصيل الوجبات السريعة إلى منزلك، مكتبك';
 			case 'Fast_food_suBody': return 'أينما تكون';
 			case 'Find_Food_You_Love': return 'ابحث عن الطعام الذي تحبه';
+			case 'Full_name': return 'الاسم بالكامل';
 			case 'Live_Tracking': return 'تتبع مباشر';
 			case 'Live_Tracking_body': return 'تتبع طعامك في الوقت الحقيقي على التطبيق';
 			case 'Live_Tracking_suBody': return 'بمجرد تقديم الطلب';
 			case 'Log_out': return 'تسجيل خروج';
 			case 'Makeup_and_eyelashes': return 'المكياجُ والرموشُ';
+			case 'Mobile_number': return 'رقم الجوال';
+			case 'Resend': return 'إعادة إرسال';
 			case 'Share_app': return 'شارك التطبيق';
+			case 'To_modify_your_personal_account_information': return 'لتعديل بيانات حسابك الشخصي';
+			case 'We_have_sent_the_activation_code_to_the_number': return 'لقد قمنا بإرسال رمز التفعيل إلى الرقم';
 			case 'Your_beauty_is_a_journey_that_begins_with_our_services': return ' جمالكِ رحلةٌ تبدأُ بخدماتِنا!';
 			case 'abouut_app': return 'حول التطبيق';
 			case 'add_details_login': return 'أضف التفاصيل الخاصة بك لتسجيل الدخول';
@@ -328,6 +369,7 @@ extension on Translations {
 			case 'ahmed': return 'احمد';
 			case 'already_have_an_account': return 'هل لديك حساب؟';
 			case 'articles': return 'المقالات';
+			case 'back': return 'عوده';
 			case 'card': return 'السلة';
 			case 'confirm_password': return 'تأكيد كلمة المرور';
 			case 'confirm_password_not_empty': return 'يجب ألا يكون تأكيد كلمة المرور فارغًا';
@@ -335,7 +377,7 @@ extension on Translations {
 			case 'delivery_to': return 'التوصيل إلى';
 			case 'discover_the_best_foods': return 'اكتشف أفضل الأطعمة من أكثر من 1000';
 			case 'donot_have_an_account ': return 'ليس لديك حساب؟';
-			case 'email': return 'بريدك الالكتروني';
+			case 'email': return 'البريد الالكتروني';
 			case 'email_not_empty': return 'يجب ألا يكون البريد الإلكتروني فارغًا';
 			case 'enter_your_phone_number': return 'ادخل رقم هاتفك';
 			case 'error_occurred': return 'حدث خطأ';
@@ -345,6 +387,7 @@ extension on Translations {
 			case 'invalid_field': return 'حقل غير صالح';
 			case 'login': return 'تسجيل الدخول';
 			case 'login_with': return 'أو تسجيل الدخول باستخدام';
+			case 'message': return 'الرسالة';
 			case 'mobile': return 'رقم المحمول';
 			case 'mobile_not_must_empty': return 'يجب ألا يكون رقم الهاتف المحمول فارغًا';
 			case 'name': return 'الاسم';
@@ -359,11 +402,13 @@ extension on Translations {
 			case 'privacy_policy ': return 'سياسة الخصوصية';
 			case 'restaurants_and_fast_delivery': return 'مطاعم و توصيل سريع الي باب بيتك';
 			case 'restaurants_and_fast_delivery_to_your_doorstep': return 'المطاعم والتوصيل السريع إلى عتبة داركم';
+			case 'save': return 'حفظ';
 			case 'search': return 'ابحث';
 			case 'search_country': return 'ابحث عن الدوله';
 			case 'settings': return 'الإعدادات';
 			case 'sign_up': return 'انشاء حساب';
 			case 'something_error_try_again': return 'حدث خطأ ما يرجى المحاولة مرة أخرى';
+			case 'sure': return 'تأكيد';
 			case 'terms_and_conditions ': return 'الأحكام والشروط';
 			default: return null;
 		}
@@ -373,21 +418,32 @@ extension on Translations {
 extension on _TranslationsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'Activation_code': return 'Activation code';
 			case 'Change_language': return 'Change language';
+			case 'Contact_Information': return 'Contact Information';
 			case 'Contact_us  ': return 'Contact us';
 			case 'Delete_account': return 'Delete account';
 			case 'Discover_the_best_foods_from_over': return 'Discover the best foods from over 1,000 ';
 			case 'Edit_your_personal_account_information': return 'Edit your personal account information';
+			case 'Enter_your_email_here': return 'Enter your email here';
+			case 'Enter_your_full_name_here': return 'Enter your full name here';
+			case 'Enter_your_message_here': return 'Enter your message here';
+			case 'Enter_your_number_here': return 'Enter your number here';
 			case 'Fast_Delivery': return 'Fast Delivery';
 			case 'Fast_food_body': return 'Fast food delivery to your home, office ';
 			case 'Fast_food_suBody': return 'wherever you are';
 			case 'Find_Food_You_Love': return 'Find Food You Love';
+			case 'Full_name': return 'Full name';
 			case 'Live_Tracking': return 'Live Tracking';
 			case 'Live_Tracking_body': return 'Real time tracking of your food on the app ';
 			case 'Live_Tracking_suBody': return 'once you placed the order';
 			case 'Log_out': return 'Delete_account';
 			case 'Makeup_and_eyelashes': return 'Makeup and eyelashes';
+			case 'Mobile_number': return 'Mobile number';
+			case 'Resend': return 'Resend';
 			case 'Share_app': return 'Share app';
+			case 'To_modify_your_personal_account_information': return 'To modify your personal account information';
+			case 'We_have_sent_the_activation_code_to_the_number': return 'We have sent the activation code to the number';
 			case 'Your_beauty_is_a_journey_that_begins_with_our_services': return 'Your beauty is a journey that begins with our services!';
 			case 'abouut_app': return 'About  app';
 			case 'add_details_login': return 'Add your details to login';
@@ -397,6 +453,7 @@ extension on _TranslationsEn {
 			case 'ahmed': return 'Ahmed';
 			case 'already_have_an_account': return 'Already have an Account?';
 			case 'articles': return 'Articles';
+			case 'back': return 'Back';
 			case 'card': return 'Card';
 			case 'confirm_password': return 'Confirm Password';
 			case 'confirm_password_not_empty': return 'confirm password must not empty';
@@ -404,7 +461,7 @@ extension on _TranslationsEn {
 			case 'delivery_to': return 'Delivery to';
 			case 'discover_the_best_foods': return 'Discover the best foods from over 1,000 ';
 			case 'donot_have_an_account ': return 'Don\'t have an Account? ';
-			case 'email': return 'Your Email';
+			case 'email': return 'Email';
 			case 'email_not_empty': return 'email must not empty';
 			case 'enter_your_phone_number': return 'Enter your phone number';
 			case 'error_occurred': return 'Error Occurred';
@@ -414,6 +471,7 @@ extension on _TranslationsEn {
 			case 'invalid_field': return 'Invalid field';
 			case 'login': return 'Login';
 			case 'login_with': return 'or Login With';
+			case 'message': return 'message';
 			case 'mobile': return 'Mobile No';
 			case 'mobile_not_must_empty': return 'mobile number must not empty';
 			case 'name': return 'Name';
@@ -428,11 +486,13 @@ extension on _TranslationsEn {
 			case 'privacy_policy ': return 'privacy policy';
 			case 'restaurants_and_fast_delivery': return 'restaurants and fast delivery to your doorstep';
 			case 'restaurants_and_fast_delivery_to_your_doorstep': return 'restaurants and fast delivery to your doorstep';
+			case 'save': return 'Save';
 			case 'search': return 'Search';
 			case 'search_country': return 'Search country';
 			case 'settings': return 'Settings';
 			case 'sign_up': return 'Sign Up';
 			case 'something_error_try_again': return 'Something Happened Error Please Try Again';
+			case 'sure': return 'Sure';
 			case 'terms_and_conditions ': return 'terms and conditions';
 			default: return null;
 		}

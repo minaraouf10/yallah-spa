@@ -131,7 +131,7 @@ class LoginScreen extends ConsumerWidget {
                   ),
                   const Height(12.0),
                   InkWell(
-                    onTap: () {},
+                    onTap: () => context.pushRoute(YallahSpaLayOutRouter()),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

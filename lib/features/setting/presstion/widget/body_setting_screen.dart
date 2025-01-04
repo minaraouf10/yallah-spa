@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:yal_spa/core/config/router/router.dart';
 import 'package:yal_spa/features/setting/presstion/widget/item_setting.dart';
 import 'package:yal_spa/generated/translations.g.dart';
 
@@ -17,7 +19,7 @@ class BodySettingScreen extends StatelessWidget {
           ItemSetting(
             icon: AssetsManger.editProfile,
             title: tr.Edit_your_personal_account_information,
-            onPress: () {},
+            onPress: () => context.pushRoute(EditProfileRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.orders,
@@ -27,31 +29,31 @@ class BodySettingScreen extends StatelessWidget {
           ItemSetting(
             icon: AssetsManger.articles,
             title: tr.articles,
-            onPress: () {},
+            onPress: ()=> context.pushRoute(ArticlesRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.aboutApp,
             title: tr.abouut_app,
-            onPress: () {},
+            onPress: () => context.pushRoute(AboutAppRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.conditions,
             title: tr.terms_and_conditions,
-            onPress: () {},
+            onPress: () => context.pushRoute(TermsAndConditionsRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.privacy,
             title: tr.privacy_policy,
-            onPress: () {},
+            onPress: () => context.pushRoute(PrivacyPolicyRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.contactUs,
             title: tr.Contact_us,
-            onPress: () {},
+            onPress: () => context.pushRoute(ContactUsRouter()),
           ),
           ItemSetting(
             icon: AssetsManger.shareApp,
-            title:tr.Share_app,
+            title: tr.Share_app,
             onPress: () {},
           ),
           ItemSetting(
@@ -62,7 +64,9 @@ class BodySettingScreen extends StatelessWidget {
           ItemSetting(
             icon: AssetsManger.deleteAccount,
             title: tr.Delete_account,
-            onPress: () {},
+            onPress: () {
+              //  c
+            },
           ),
           ItemSetting(
             icon: AssetsManger.logOut,

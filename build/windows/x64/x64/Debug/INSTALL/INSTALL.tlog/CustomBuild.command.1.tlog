@@ -1,0 +1,10 @@
+^D:\ANDROID_PROJECT\YAL_SPA\BUILD\WINDOWS\X64\CMAKEFILES\6467B6E6E65BF97B00EE71C261617638\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

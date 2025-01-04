@@ -37,6 +37,8 @@ class SettingScreen extends StatelessWidget {
                     radius: 50.0,
                   ),
                       InkWell(
+                        splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: (){},
                           child: SvgPicture.asset(AssetsManger.editImage))
                 ]),

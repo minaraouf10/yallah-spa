@@ -103,6 +103,54 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const YallahSpaLayOut(),
       );
     },
+    EditProfileRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EditProfileScreen(),
+      );
+    },
+    EditProfileOtpRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EditProfileOtp(),
+      );
+    },
+    AboutAppRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AboutAppScreen(),
+      );
+    },
+    TermsAndConditionsRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TermsAndConditionsScreen(),
+      );
+    },
+    PrivacyPolicyRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PrivacyPolicyScreen(),
+      );
+    },
+    ContactUsRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ContactUsScreen(),
+      );
+    },
+    ArticlesRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ArticlesScreen(),
+      );
+    },
+    ArticlesItemBodyRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ArticlesItemBody(),
+      );
+    },
   };
 }
 
@@ -346,6 +394,118 @@ class YallahSpaLayOutRouter extends PageRouteInfo<void> {
         );
 
   static const String name = 'YallahSpaLayOutRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [Edit Profile]
+class EditProfileRouter extends PageRouteInfo<void> {
+  const EditProfileRouter({List<PageRouteInfo>? children})
+      : super(
+    EditProfileRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'EditProfileRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [Edit Profile]
+class EditProfileOtpRouter extends PageRouteInfo<void> {
+  const EditProfileOtpRouter({List<PageRouteInfo>? children})
+      : super(
+    EditProfileOtpRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'EditProfileOtpRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [About App]
+class AboutAppRouter extends PageRouteInfo<void> {
+  const AboutAppRouter({List<PageRouteInfo>? children})
+      : super(
+    AboutAppRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'AboutAppRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [About App]
+class TermsAndConditionsRouter extends PageRouteInfo<void> {
+  const TermsAndConditionsRouter({List<PageRouteInfo>? children})
+      : super(
+    TermsAndConditionsRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'TermsAndConditionsRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [Privacy Policy]
+class PrivacyPolicyRouter extends PageRouteInfo<void> {
+  const PrivacyPolicyRouter({List<PageRouteInfo>? children})
+      : super(
+    PrivacyPolicyRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'PrivacyPolicyRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [Contact Us]
+class ContactUsRouter extends PageRouteInfo<void> {
+  const ContactUsRouter({List<PageRouteInfo>? children})
+      : super(
+    ContactUsRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'ContactUsRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [articles]
+class ArticlesRouter extends PageRouteInfo<void> {
+  const ArticlesRouter({List<PageRouteInfo>? children})
+      : super(
+    ArticlesRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'ArticlesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ArticlesItemBody]
+class ArticlesItemBodyRouter extends PageRouteInfo<void> {
+  const ArticlesItemBodyRouter({List<PageRouteInfo>? children})
+      : super(
+    ArticlesItemBodyRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'ArticlesItemBodyRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
