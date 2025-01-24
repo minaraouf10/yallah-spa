@@ -6,6 +6,7 @@ import 'package:yal_spa/core/config/widgets/custom_appbar.dart';
 import 'package:yal_spa/core/config/widgets/custom_sized_box.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
 import 'package:yal_spa/generated/translations.g.dart';
+
 import '../../../../core/config/themes/app_colors.dart';
 import '../../../../core/config/utils/assets_manager.dart';
 import '../../../../core/config/widgets/custom_button.dart';

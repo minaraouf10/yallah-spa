@@ -151,6 +151,18 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ArticlesItemBody(),
       );
     },
+    OrderRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OrderScreen(),
+      );
+    },
+    DeleteAccountRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DeleteAccountScreen(),
+      );
+    },
   };
 }
 
@@ -506,6 +518,34 @@ class ArticlesItemBodyRouter extends PageRouteInfo<void> {
   );
 
   static const String name = 'ArticlesItemBodyRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OrderRouter]
+class OrderRouter extends PageRouteInfo<void> {
+  const OrderRouter({List<PageRouteInfo>? children})
+      : super(
+    OrderRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'OrderRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DeleteAccountRouter]
+class DeleteAccountRouter extends PageRouteInfo<void> {
+  const DeleteAccountRouter({List<PageRouteInfo>? children})
+      : super(
+    DeleteAccountRouter.name,
+    initialChildren: children,
+  );
+
+  static const String name = 'DeleteAccountRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

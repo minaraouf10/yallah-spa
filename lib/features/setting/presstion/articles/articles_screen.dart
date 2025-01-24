@@ -29,7 +29,6 @@ class ArticlesScreen extends StatelessWidget {
             ArticlesItem(),
             DefaultDivider(),
             ArticlesItem(),
-
           ],
         ),
       ),

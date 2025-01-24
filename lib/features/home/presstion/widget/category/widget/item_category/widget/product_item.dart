@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
+
 import '../../../../../../../../core/config/themes/app_colors.dart';
 import '../../../../../../../../core/config/utils/assets_manager.dart';
 import '../../../../../../../../core/config/widgets/custom_button.dart';

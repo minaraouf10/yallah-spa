@@ -1,14 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:yal_spa/core/config/utils/assets_manager.dart';
 import 'package:yal_spa/core/config/widgets/custom_sized_box.dart';
-import 'package:yal_spa/features/home/data/model/home_screen_model.dart';
 import 'package:yal_spa/features/offers/presstion/widget/offerItem.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
 
-import '../../favorites/presstion/widget/search.dart';
-import '../../home/presstion/widget/category/widget/category_item.dart';
-import '../../home/presstion/widget/category/widget/item_category/widget/product_item.dart';
+import '../../home/presstion/widget/search.dart';
+
 
 @RoutePage()
 class OffersScreen extends StatelessWidget {

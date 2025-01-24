@@ -141,6 +141,7 @@ Future<Response> validateResponse(
       case HttpStatus.internalServerError:
         throw InternalServerError();
       case HttpStatus.unauthorized:
+        log(res.statusCode.toString(),name: 'statusCode');
         throw UnAuthorized(res);
       default:
         return res;
@@ -148,10 +149,10 @@ Future<Response> validateResponse(
   } on DioError catch (e, st) {
     log(e.toString());
     log(st.toString());
-    if (e.type == DioErrorType.connectionTimeout ||
-        e.type == DioErrorType.receiveTimeout ||
-        e.type == DioErrorType.sendTimeout ||
-        e.type == DioErrorType.unknown) {
+    if (e.type == DioExceptionType.connectionTimeout ||
+        e.type == DioExceptionType.receiveTimeout ||
+        e.type == DioExceptionType.sendTimeout ||
+        e.type == DioExceptionType.unknown) {
       //final hasConnection = await InternetConnectionCheckerPlus().hasConnection;
       //  if (!hasConnection) {
       throw NoInternetConnection();

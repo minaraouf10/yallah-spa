@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 152 (76 per locale)
+/// Strings: 162 (81 per locale)
 ///
-/// Built on 2024-12-29 at 19:45 UTC
+/// Built on 2025-01-11 at 11:39 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,9 +149,11 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	String get Activation_code => 'رمز التفعيل';
+	String get Cancel_service_request => 'الغاء طلب الخدمة';
 	String get Change_language => 'تغيير اللغة';
 	String get Contact_Information => 'معلومات الاتصال';
 	String get Contact_us   => 'تواصل معنا';
+	String get Current_Orders => 'الطلبات الحالية';
 	String get Delete_account => 'حذف الحساب';
 	String get Discover_the_best_foods_from_over => 'اكتشاف أفضل الأطعمة من أكثر من 1000';
 	String get Edit_your_personal_account_information => 'تعديل بيانات حسابك الشخصي';
@@ -164,12 +166,15 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get Fast_food_suBody => 'أينما تكون';
 	String get Find_Food_You_Love => 'ابحث عن الطعام الذي تحبه';
 	String get Full_name => 'الاسم بالكامل';
+	String get In_progress => 'جارى العمل عليه';
 	String get Live_Tracking => 'تتبع مباشر';
 	String get Live_Tracking_body => 'تتبع طعامك في الوقت الحقيقي على التطبيق';
 	String get Live_Tracking_suBody => 'بمجرد تقديم الطلب';
 	String get Log_out => 'تسجيل خروج';
 	String get Makeup_and_eyelashes => 'المكياجُ والرموشُ';
 	String get Mobile_number => 'رقم الجوال';
+	String get Previous_requests => 'الطلبات السابقة';
+	String get Reschedule => 'اعاده الجدولة';
 	String get Resend => 'إعادة إرسال';
 	String get Share_app => 'شارك التطبيق';
 	String get To_modify_your_personal_account_information => 'لتعديل بيانات حسابك الشخصي';
@@ -251,9 +256,11 @@ class _TranslationsEn implements Translations {
 
 	// Translations
 	@override String get Activation_code => 'Activation code';
+	@override String get Cancel_service_request => 'Cancel service request';
 	@override String get Change_language => 'Change language';
 	@override String get Contact_Information => 'Contact Information';
 	@override String get Contact_us   => 'Contact us';
+	@override String get Current_Orders => 'Current Orders';
 	@override String get Delete_account => 'Delete account';
 	@override String get Discover_the_best_foods_from_over => 'Discover the best foods from over 1,000 ';
 	@override String get Edit_your_personal_account_information => 'Edit your personal account information';
@@ -266,12 +273,15 @@ class _TranslationsEn implements Translations {
 	@override String get Fast_food_suBody => 'wherever you are';
 	@override String get Find_Food_You_Love => 'Find Food You Love';
 	@override String get Full_name => 'Full name';
+	@override String get In_progress => 'In progress';
 	@override String get Live_Tracking => 'Live Tracking';
 	@override String get Live_Tracking_body => 'Real time tracking of your food on the app ';
 	@override String get Live_Tracking_suBody => 'once you placed the order';
 	@override String get Log_out => 'Delete_account';
 	@override String get Makeup_and_eyelashes => 'Makeup and eyelashes';
 	@override String get Mobile_number => 'Mobile number';
+	@override String get Previous_requests => 'Previous requests';
+	@override String get Reschedule => 'Reschedule';
 	@override String get Resend => 'Resend';
 	@override String get Share_app => 'Share app';
 	@override String get To_modify_your_personal_account_information => 'To modify your personal account information';
@@ -335,9 +345,11 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'Activation_code': return 'رمز التفعيل';
+			case 'Cancel_service_request': return 'الغاء طلب الخدمة';
 			case 'Change_language': return 'تغيير اللغة';
 			case 'Contact_Information': return 'معلومات الاتصال';
 			case 'Contact_us  ': return 'تواصل معنا';
+			case 'Current_Orders': return 'الطلبات الحالية';
 			case 'Delete_account': return 'حذف الحساب';
 			case 'Discover_the_best_foods_from_over': return 'اكتشاف أفضل الأطعمة من أكثر من 1000';
 			case 'Edit_your_personal_account_information': return 'تعديل بيانات حسابك الشخصي';
@@ -350,12 +362,15 @@ extension on Translations {
 			case 'Fast_food_suBody': return 'أينما تكون';
 			case 'Find_Food_You_Love': return 'ابحث عن الطعام الذي تحبه';
 			case 'Full_name': return 'الاسم بالكامل';
+			case 'In_progress': return 'جارى العمل عليه';
 			case 'Live_Tracking': return 'تتبع مباشر';
 			case 'Live_Tracking_body': return 'تتبع طعامك في الوقت الحقيقي على التطبيق';
 			case 'Live_Tracking_suBody': return 'بمجرد تقديم الطلب';
 			case 'Log_out': return 'تسجيل خروج';
 			case 'Makeup_and_eyelashes': return 'المكياجُ والرموشُ';
 			case 'Mobile_number': return 'رقم الجوال';
+			case 'Previous_requests': return 'الطلبات السابقة';
+			case 'Reschedule': return 'اعاده الجدولة';
 			case 'Resend': return 'إعادة إرسال';
 			case 'Share_app': return 'شارك التطبيق';
 			case 'To_modify_your_personal_account_information': return 'لتعديل بيانات حسابك الشخصي';
@@ -419,9 +434,11 @@ extension on _TranslationsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'Activation_code': return 'Activation code';
+			case 'Cancel_service_request': return 'Cancel service request';
 			case 'Change_language': return 'Change language';
 			case 'Contact_Information': return 'Contact Information';
 			case 'Contact_us  ': return 'Contact us';
+			case 'Current_Orders': return 'Current Orders';
 			case 'Delete_account': return 'Delete account';
 			case 'Discover_the_best_foods_from_over': return 'Discover the best foods from over 1,000 ';
 			case 'Edit_your_personal_account_information': return 'Edit your personal account information';
@@ -434,12 +451,15 @@ extension on _TranslationsEn {
 			case 'Fast_food_suBody': return 'wherever you are';
 			case 'Find_Food_You_Love': return 'Find Food You Love';
 			case 'Full_name': return 'Full name';
+			case 'In_progress': return 'In progress';
 			case 'Live_Tracking': return 'Live Tracking';
 			case 'Live_Tracking_body': return 'Real time tracking of your food on the app ';
 			case 'Live_Tracking_suBody': return 'once you placed the order';
 			case 'Log_out': return 'Delete_account';
 			case 'Makeup_and_eyelashes': return 'Makeup and eyelashes';
 			case 'Mobile_number': return 'Mobile number';
+			case 'Previous_requests': return 'Previous requests';
+			case 'Reschedule': return 'Reschedule';
 			case 'Resend': return 'Resend';
 			case 'Share_app': return 'Share app';
 			case 'To_modify_your_personal_account_information': return 'To modify your personal account information';

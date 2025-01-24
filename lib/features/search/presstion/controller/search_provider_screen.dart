@@ -4,7 +4,7 @@
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import '../../../../core/config/utils/custom_state.dart';
 // import '../../../home/data/model/home_screen_model.dart';
-// import '../../data/service/search_service.dart';
+// import '../../data/service/setting_service.dart';
 //
 // final searchProviderScreen = Provider<SearchLogic>(
 //   (ref) => SearchLogic(ref: ref, ref.watch(searchServiceProvider)),

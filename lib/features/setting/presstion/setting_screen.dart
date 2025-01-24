@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yal_spa/core/config/themes/app_theme.dart';
 import 'package:yal_spa/core/config/utils/assets_manager.dart';
@@ -7,13 +8,15 @@ import 'package:yal_spa/features/setting/presstion/widget/body_setting_screen.da
 
 import '../../../core/config/widgets/custom_appbar.dart';
 import '../../../generated/translations.g.dart';
+import 'controller/setting_provider.dart';
 
 @RoutePage()
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends ConsumerWidget {
   const SettingScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
+    final settingProvider = ref.read(settingProviderScreen);
     return Scaffold(
       appBar: CustomAppBar(
         title: tr.settings,

@@ -44,6 +44,7 @@ class CardProviderLogic extends _card_providerStates {
     }
   }
 
+
 }
 
 class _card_providerStates {

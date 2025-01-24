@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:yal_spa/features/home/data/model/home_screen_model.dart';
 import 'package:yal_spa/features/home/presstion/product/widget/product_body.dart';
+
 import '../../../../core/config/widgets/custom_appbar.dart';
 
 @RoutePage()

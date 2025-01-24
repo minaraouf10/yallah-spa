@@ -9,6 +9,7 @@ import 'package:yal_spa/features/home/presstion/home_screen.dart';
 import 'package:yal_spa/features/notification/notification_screen.dart';
 import 'package:yal_spa/features/offers/presstion/offers_screen.dart';
 import 'package:yal_spa/features/setting/presstion/articles/widget/articles_item_body.dart';
+import 'package:yal_spa/features/setting/presstion/delete_account/delete_account_screen.dart';
 import 'package:yal_spa/features/setting/presstion/setting_screen.dart';
 
 import '../../../features/auth/presstion/login/otp_screen.dart';
@@ -21,8 +22,10 @@ import '../../../features/setting/presstion/articles/articles_screen.dart';
 import '../../../features/setting/presstion/contact_us/contact_us_screen.dart';
 import '../../../features/setting/presstion/ediit_profile/edit_profile_otp.dart';
 import '../../../features/setting/presstion/ediit_profile/edit_profile_screen.dart';
+import '../../../features/setting/presstion/order/order_screen.dart';
 import '../../../features/setting/presstion/privacy_policy/privacy_policy_screen.dart';
 import '../../../features/setting/presstion/terms_and_conditions/terms_conditionss_screen.dart';
+import '../../data/locale/user_pref.dart';
 
 part 'router.gr.dart';
 
@@ -33,11 +36,11 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: LoginRoute.page, initial: true),
+        AutoRoute(page: LoginRoute.page, initial:! UserPrefs.isUserLoggedIn),
         AutoRoute(page: OtpRoute.page),
         AutoRoute(page: LocationRoute.page),
         AutoRoute(page: EnterLocationRouter.page),
-        AutoRoute(page: YallahSpaLayOutRouter.page),
+        AutoRoute(page: YallahSpaLayOutRouter.page,initial: UserPrefs.isUserLoggedIn),
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: FavoriteRoute.page),
         AutoRoute(page: CardRoute.page),
@@ -54,6 +57,8 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: ContactUsRouter.page),
         AutoRoute(page: ArticlesRouter.page),
         AutoRoute(page: ArticlesItemBodyRouter.page),
+        AutoRoute(page: OrderRouter.page),
+        AutoRoute(page: DeleteAccountRouter.page),
       ];
 
   List<AutoRouteGuard> get guards => [

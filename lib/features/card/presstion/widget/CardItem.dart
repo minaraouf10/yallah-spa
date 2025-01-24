@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yal_spa/core/config/utils/assets_manager.dart';
 import 'package:yal_spa/core/config/widgets/custom_sized_box.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
+
 import '../../../../core/config/themes/app_colors.dart';
 import '../controller/card_provider.dart';
 

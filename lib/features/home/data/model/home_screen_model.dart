@@ -18,16 +18,16 @@ class HomeModel {
   });
 
   factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(
-        id: json['id'] as int,
-        nameAR: json['name_ar'] as String,
-        nameENG: json['name_en'] as String,
-        descriptionEnG: json['description_en'] as String,
-        descriptionAR: json['description_ar'] as String,
-        image: json['image'] as String,
-        products: (json['products'] as List)
-            .map((e) => ProductData.fromJson(e))
-            .toList(),
-      );
+    id: json['id'] as int,
+    nameAR: json['name_ar'] as String,
+    nameENG: json['name_en'] as String,
+    descriptionEnG: json['description_en'] as String,
+    descriptionAR: json['description_ar'] as String,
+    image: json['image'] as String,
+    products: (json['products'] as List)
+        .map((e) => ProductData.fromJson(e))
+        .toList(),
+  );
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -75,25 +75,25 @@ class ProductData {
   });
 
   factory ProductData.fromJson(Map<String, dynamic> json) => ProductData(
-        id: json['id'] as int,
-        nameAR: json['name_ar'] as String,
-        nameENG: json['name_en'] as String,
-        descriptionEnG: json['description_en'] as String,
-        descriptionAR: json['description_ar'] as String,
-        classs: json['class'] as String,
-        binfites: json['binfites'] as String,
-        serviceNameAR: json['service_name_ar'] as String,
-        serviceNameEN: json['service_name_en'] as String,
-        target: json['target'] as String,
-        type: (json['type'] as List).map((e) => TypeData.fromJson(e)).toList(),
-        time: (json['time'] as List).map((e) => TimeData.fromJson(e)).toList(),
-        frequency: (json['frequency'] as List)
-            .map((e) => FrequencyData.fromJson(e))
-            .toList(),
-        gallery: (json['gallery'] as List)
-            .map((e) => GalleryData.fromJson(e))
-            .toList(),
-      );
+    id: json['id'] as int,
+    nameAR: json['name_ar'] as String,
+    nameENG: json['name_en'] as String,
+    descriptionEnG: json['description_en'] as String,
+    descriptionAR: json['description_ar'] as String,
+    classs: json['class'] as String,
+    binfites: json['binfites'] as String,
+    serviceNameAR: json['service_name_ar'] as String,
+    serviceNameEN: json['service_name_en'] as String,
+    target: json['target'] as String,
+    type: (json['type'] as List).map((e) => TypeData.fromJson(e)).toList(),
+    time: (json['time'] as List).map((e) => TimeData.fromJson(e)).toList(),
+    frequency: (json['frequency'] as List)
+        .map((e) => FrequencyData.fromJson(e))
+        .toList(),
+    gallery: (json['gallery'] as List)
+        .map((e) => GalleryData.fromJson(e))
+        .toList(),
+  );
 }
 
 class TypeData {
@@ -108,10 +108,10 @@ class TypeData {
   });
 
   factory TypeData.fromJson(Map<String, dynamic> json) => TypeData(
-        typeId: json['id'] as int,
-        typeName: json['name'] as String,
-        typeDescription: json['description'] as String,
-      );
+    typeId: json['id'] as int,
+    typeName: json['name'] as String,
+    typeDescription: json['description'] as String,
+  );
 
 }
 
@@ -127,10 +127,10 @@ class TimeData {
   });
 
   factory TimeData.fromJson(Map<String, dynamic> json) => TimeData(
-        timeId: json['id'] as int,
-        timeName: json['name'] as String,
-        timePrice: json['price'] as String,
-      );
+    timeId: json['id'] as int,
+    timeName: json['name'] as String,
+    timePrice: json['price'] as String,
+  );
 
 }
 
@@ -150,12 +150,12 @@ class FrequencyData {
   });
 
   factory FrequencyData.fromJson(Map<String, dynamic> json) => FrequencyData(
-        frequencyId: json['id'] as int,
-        frequencyName: json['name'] as String,
-        frequencyPrice: json['price'] as String,
-        frequencyDuration: json['duration'] as String,
-        frequencyCountOfSeason: json['count_of_seasson'] as String,
-      );
+    frequencyId: json['id'] as int,
+    frequencyName: json['name'] as String,
+    frequencyPrice: json['price'] as String,
+    frequencyDuration: json['duration'] as String,
+    frequencyCountOfSeason: json['count_of_seasson'] as String,
+  );
 }
 
 class GalleryData {
@@ -168,7 +168,7 @@ class GalleryData {
   });
 
   factory GalleryData.fromJson(Map<String, dynamic> json) => GalleryData(
-        galleryId: json['id'] as int,
-        galleryURL: json['url'] as String,
-      );
+    galleryId: json['id'] as int,
+    galleryURL: json['url'] as String,
+  );
 }

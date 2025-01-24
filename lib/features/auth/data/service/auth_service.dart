@@ -1,5 +1,8 @@
 import 'dart:developer';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yal_spa/core/config/utils/custom_state.dart';
+
 import '../../../../core/api_helper/custom_response.dart';
 import '../../../../core/api_helper/dio_client.dart';
 import '../../../../core/api_helper/dio_providers.dart';
@@ -24,25 +27,22 @@ class AuthService {
       'phone': phone,
     };
 
-    // Create CustomResponse
     final res = CustomResponse(await client.post(Endpoints.login, body: body));
 
-    // Throw an error if 'error' is true
     if (res.isError) throw res.message;
 
-    // Handle the 'data' field dynamically
-    if (res.data is Map<String, dynamic>) {
-      // If 'data' is a JSON object, deserialize it
+    if (res.data is Json) {
       final data = res.data as Map<String, dynamic>;
       final dataMode = DataModel.fromJson(data);
       await UserPrefs.setUserToken(dataMode.token);
+      final String token = (UserPrefs.getUserToken()).toString();
+      log('token',name: 'tokenService1');
+      log(token,name: 'tokenService');
       return dataMode;
     } else if (res.data is List) {
-      // If 'data' is an empty list, return null or a default UserModel
-      log('Data field is an empty list.');
-      return null; // or handle it accordingly
+      log('Data field is an empty list.',name: 'data is a list');
+      return null;
     } else {
-      // Unexpected format
       throw 'Invalid response: Unexpected data format';
     }
   }
@@ -52,26 +52,23 @@ class AuthService {
       'phone': phone,
       'otp': otp,
     };
-
-    // Create CustomResponse
     final res = CustomResponse(await client.post(Endpoints.otp, body: body));
 
-    // Throw an error if 'error' is true
     if (res.isError) throw res.message;
 
-    // Handle the 'data' field dynamically
-    if (res.data is Map<String, dynamic>) {
-      // If 'data' is a JSON object, deserialize it
+    if (res.data is Json) {
       final data = res.data as Map<String, dynamic>;
       final dataMode = DataModel.fromJson(data);
-      await UserPrefs.setUserToken(dataMode.token);
+      final tokenWithBearer = 'Bearer ${dataMode.token}';
+      await UserPrefs.setUserToken(tokenWithBearer);
+      final String token = (UserPrefs.getUserToken()).toString();
+      log('token',name: 'tokenServiceOtp');
+      log(token,name: 'tokenServiceOtp');
       return dataMode;
     } else if (res.data is List) {
-      // If 'data' is an empty list, return null or a default UserModel
-      log('Data field is an empty list.');
-      return null; // or handle it accordingly
+      log('Data field is an empty list.',name: 'data is a list otp.');
+      return null;
     } else {
-      // Unexpected format
       throw 'Invalid response: Unexpected data format';
     }
   }

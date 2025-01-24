@@ -152,16 +152,36 @@ extension ShowBottomSheet on BuildContext {
 
 extension ShowAlertDialog on BuildContext {
   Future<void> showCustomAlertDialog({
-    required Widget child,
+    required Widget dialog,
+    bool isDismissible = true,
   }) async {
     return showDialog(
       context: this,
+      barrierDismissible: isDismissible,
       builder: (context) => AlertDialog(
-        content: child,
+        backgroundColor: AppColors.white,
+        surfaceTintColor: AppColors.white,
+        content: dialog,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
     );
   }
 }
+
+// extension ShowAlertDialog on BuildContext {
+//   Future<void> showCustomAlertDialog({
+//     required Widget child,
+//   }) async {
+//     return showDialog(
+//       context: this,
+//       builder: (context) => AlertDialog(
+//         content: child,
+//       ),
+//     );
+//   }
+// }
 
 // extension CallLaunchUrl on BuildContext {
 //   Future<void> callLaunchUrl({required String url, LaunchMode? mode}) async {
