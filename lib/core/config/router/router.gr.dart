@@ -146,9 +146,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ArticlesItemBodyRouter.name: (routeData) {
+      final args = routeData.argsAs<ArticlesItemBodyRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ArticlesItemBody(),
+        child:  ArticlesItemBody(
+          key: args.key,
+          data: args.data,
+        ),
       );
     },
     OrderRouter.name: (routeData) {
@@ -511,15 +515,39 @@ class ArticlesRouter extends PageRouteInfo<void> {
 /// generated route for
 /// [ArticlesItemBody]
 class ArticlesItemBodyRouter extends PageRouteInfo<void> {
-  const ArticlesItemBodyRouter({List<PageRouteInfo>? children})
-      : super(
+  ArticlesItemBodyRouter({
+    Key? key,
+    required ArticlesModel data,
+    List<PageRouteInfo>? children,
+  }) : super(
     ArticlesItemBodyRouter.name,
+    args: ArticlesItemBodyRouteArgs(
+      key: key,
+      data: data,
+    ),
     initialChildren: children,
   );
 
   static const String name = 'ArticlesItemBodyRouter';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ArticlesItemBodyRouteArgs> page =
+  PageInfo<ArticlesItemBodyRouteArgs>(name);
+}
+
+class ArticlesItemBodyRouteArgs {
+  const ArticlesItemBodyRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final ArticlesModel data;
+
+  @override
+  String toString() {
+    return 'ArticlesItemBodyRouteArgs{key: $key, data: $data}';
+  }
 }
 
 /// generated route for

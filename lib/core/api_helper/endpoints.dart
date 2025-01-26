@@ -7,6 +7,8 @@ abstract class Endpoints {
   static const otp = 'auth/verify';
   static const services = 'service/index';
   static const profile = 'client/profile/me';
+  static const getAllArticles = 'article/index';
   static const getAllOffers = 'offer/index';
   static const getAllFavorite = 'client/favourite/index';
+  static const getAllProducts = 'product/index';
 }

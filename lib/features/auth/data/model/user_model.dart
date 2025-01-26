@@ -1,3 +1,5 @@
+import 'package:yal_spa/core/config/utils/custom_state.dart';
+
 class DataModel {
   final String token;
   final UserModel user;
@@ -20,7 +22,7 @@ class UserModel {
   final String phone;
   final String fcmToken;
   final String createdAt;
-  final List media;
+  final List<ProfileMedia> media;
 
   UserModel({
     required this.id,
@@ -39,7 +41,9 @@ class UserModel {
       phone: json['phone'] as String,
       fcmToken: json['fcm_token'] as String,
       createdAt: json['created_at'] as String,
-      media: (json['media'] as List));
+      media: (json['media'] as List)
+          .map((e) => ProfileMedia.fromJson(e as Json))
+          .toList());
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -49,4 +53,25 @@ class UserModel {
     data['token'] = fcmToken;
     return data;
   }
+}
+
+class ProfileMedia {
+  final int profileId;
+  final String profileUuid;
+  final int profileSize;
+  final String profileOriginalUrl;
+
+  ProfileMedia({
+    required this.profileId,
+    required this.profileUuid,
+    required this.profileSize,
+    required this.profileOriginalUrl,
+  });
+
+  factory ProfileMedia.fromJson(Json json) => ProfileMedia(
+        profileId: json['id'] as int ?? 0,
+        profileUuid: json['uuid'] as String ?? '',
+        profileSize: json['size'] as int ?? 0,
+        profileOriginalUrl: json['original_url'] as String ?? '',
+      );
 }

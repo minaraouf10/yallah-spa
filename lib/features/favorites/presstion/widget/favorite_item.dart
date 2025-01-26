@@ -37,7 +37,7 @@ class FavoriteItem extends ConsumerWidget {
                       data[index].products.gallery[0].galleryURL, // أول صورة في المعرض
                       width: 155.0,
                       height: 120.0,
-                      // fit: BoxFit.cover,
+                       fit: BoxFit.cover,
                     ).animate().fadeIn(duration: 500.ms).scale(duration: 500.ms),
                     const Height(6.0),
                     Text(

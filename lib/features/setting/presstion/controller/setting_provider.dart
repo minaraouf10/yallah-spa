@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yal_spa/features/auth/data/model/user_model.dart';
-
+import 'package:yal_spa/features/setting/data/model/articles_model.dart';
 import '../../../../core/config/utils/custom_state.dart';
+import '../../data/model/profile_model.dart';
 import '../../data/service/setting_service.dart';
 
 final settingProviderScreen = Provider<SettingLogic>(
@@ -14,24 +17,29 @@ class SettingLogic extends _SettingStates {
 
   final SettingService settingService;
 
-  // Future<void> getData() async {
+
+  // Future<ProfileModel> getProfileData() async {
   //   isLoading.state = true;
-  //   await Future.delayed(const Duration(seconds: 2));
+  //   final profileModel = await settingService.ProfileData();
+  //   profileImage.state = profileModel.media[0].profileOriginalUrl.toString();
+  //   log(profileImage.state.toString(),name: 'profileImage');
   //   isLoading.state = false;
+  //   return profileModel;
   // }
 
-  Future<UserModel> getProfileData() async {
-    isLoading.state = true;
-    final userModel = settingService.ProfileData();
-    final String profileImage = userModel.toString();
-    return userModel;
-  }
+// Future <List<ArticlesModel>> Articles () async{
+//   isLoading.state = true;
+//   final articleModel = await settingService.getArticles();
+//
+// }
 }
 
 class _SettingStates {
   final ProviderRef ref;
   final CustomState<bool> isLoading;
+  final CustomState<String> profileImage;
 
   _SettingStates({required this.ref})
-      : isLoading = CustomState<bool>(ref, false);
+      : isLoading = CustomState<bool>(ref, false),
+   profileImage = CustomState<String>(ref, '');
 }

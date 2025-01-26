@@ -8,6 +8,7 @@ import 'package:yal_spa/features/home/data/model/home_screen_model.dart';
 import 'package:yal_spa/features/home/presstion/home_screen.dart';
 import 'package:yal_spa/features/notification/notification_screen.dart';
 import 'package:yal_spa/features/offers/presstion/offers_screen.dart';
+import 'package:yal_spa/features/setting/data/model/articles_model.dart';
 import 'package:yal_spa/features/setting/presstion/articles/widget/articles_item_body.dart';
 import 'package:yal_spa/features/setting/presstion/delete_account/delete_account_screen.dart';
 import 'package:yal_spa/features/setting/presstion/setting_screen.dart';

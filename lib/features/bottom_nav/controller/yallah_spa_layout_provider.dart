@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../core/config/utils/custom_state.dart';
 import '../../card/presstion/card_screen.dart';
 import '../../favorites/presstion/favorite_screen.dart';
 import '../../home/presstion/home_screen.dart';
 import '../../offers/presstion/offers_screen.dart';
+import '../../setting/presstion/controller/setting_provider.dart';
 import '../../setting/presstion/setting_screen.dart';
 
 final yallahSpaLayoutProviderScreen = Provider<YallahSpaLayOutLogic>(
-  (ref) => YallahSpaLayOutLogic(ref: ref),
+  (ref) => YallahSpaLayOutLogic(ref: ref,settingLogic: ref.read(settingProviderScreen)),
 );
 
 class YallahSpaLayOutLogic extends _YallahSpaLayOutStates {
-  YallahSpaLayOutLogic({required super.ref});
+  YallahSpaLayOutLogic({required super.ref, required this.settingLogic});
 
-  // Future<void> getData() async {
-  //   isLoading.state = true;
-  //   await Future.delayed(const Duration(seconds: 2));
-  //   isLoading.state = false;
-  // }
+  final SettingLogic settingLogic;
 
   List<Widget> screens = [
     const HomeScreen(),

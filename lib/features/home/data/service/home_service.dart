@@ -30,11 +30,13 @@ class AuthService {
       final homeModels =
           data.map((e) => HomeModel.fromJson(e as Json)).toList();
       return homeModels;
-    } else if (res.data is Json) {
+    }
+    else if (res.data is Json) {
       final data = res.data as Map<String, dynamic>;
       final homeModel = HomeModel.fromJson(data);
       return [homeModel]; // نضع كائن HomeModel في قائمة
-    } else {
+    }
+    else {
       throw 'Invalid response: Unexpected data format';
     }
   }

@@ -6,6 +6,7 @@ final userPrefsProvider = Provider<UserPrefs>((ref) {
 });
 
 const sharedTokenId = 'token';
+const profileImage = 'profile_image';
 
 class UserPrefs {
   static final prefs = SharedPrefs.instance;
@@ -13,7 +14,12 @@ class UserPrefs {
   static Future<void> setUserToken(String token) =>
       prefs.setString(sharedTokenId, token);
 
+  static Future<void> setProfileImage(String image) =>
+      prefs.setString(profileImage, image);
+
   static String getUserToken() => prefs.getString(sharedTokenId) ?? '';
+
+  static String getProfileImage() => prefs.getString(profileImage) ?? '';
 
   static Future<void> deleteUserToken() async => prefs.remove(sharedTokenId);
 

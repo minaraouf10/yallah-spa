@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yal_spa/features/auth/presstion/login/controller/login_provider_screen.dart';
+import 'package:yal_spa/features/setting/presstion/controller/setting_provider.dart';
 
 import '../../../../../core/config/utils/custom_state.dart';
 import '../../../data/service/auth_service.dart';
@@ -25,6 +26,8 @@ class OTPLogic extends _OTPStates {
 
   final LoginLogic loginLogic;
 
+  //final SettingLogic settingLogic;
+
   final TextEditingController otpController = TextEditingController();
 
   Future<void> checkOTP() async {
@@ -40,6 +43,7 @@ class OTPLogic extends _OTPStates {
         isSuccess.state = true;
         log('User logged in successfully: ${data?.user.name}',
             name: 'otpController');
+        profileImage.state = data!.user.media[0].profileOriginalUrl;
       } else {
         isSuccess.state = true;
         isError.state = 'No user data received.';
@@ -59,9 +63,11 @@ class _OTPStates {
   final CustomState<bool> isLoading;
   final CustomState<String> isError;
   final CustomState<bool> isSuccess;
+  final CustomState<String> profileImage;
 
   _OTPStates({required this.ref})
       : isLoading = CustomState<bool>(ref, false),
         isError = CustomState<String>(ref, ''),
+        profileImage = CustomState<String>(ref, ''),
         isSuccess = CustomState<bool>(ref, false);
 }

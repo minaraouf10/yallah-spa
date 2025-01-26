@@ -32,13 +32,13 @@ class AuthService {
     if (res.isError) throw res.message;
 
     if (res.data is Json) {
-      final data = res.data as Map<String, dynamic>;
-      final dataMode = DataModel.fromJson(data);
-      await UserPrefs.setUserToken(dataMode.token);
+      final data = res.data as Json;
+      final dataModel = DataModel.fromJson(data);
+      await UserPrefs.setUserToken(dataModel.token);
       final String token = (UserPrefs.getUserToken()).toString();
       log('token',name: 'tokenService1');
       log(token,name: 'tokenService');
-      return dataMode;
+      return dataModel;
     } else if (res.data is List) {
       log('Data field is an empty list.',name: 'data is a list');
       return null;
@@ -58,13 +58,14 @@ class AuthService {
 
     if (res.data is Json) {
       final data = res.data as Map<String, dynamic>;
-      final dataMode = DataModel.fromJson(data);
-      final tokenWithBearer = 'Bearer ${dataMode.token}';
+      final dataModel = DataModel.fromJson(data);
+      final tokenWithBearer = 'Bearer ${dataModel.token}';
       await UserPrefs.setUserToken(tokenWithBearer);
+      await UserPrefs.setProfileImage(dataModel.user.media[0].profileOriginalUrl.toString());
       final String token = (UserPrefs.getUserToken()).toString();
       log('token',name: 'tokenServiceOtp');
       log(token,name: 'tokenServiceOtp');
-      return dataMode;
+      return dataModel;
     } else if (res.data is List) {
       log('Data field is an empty list.',name: 'data is a list otp.');
       return null;
