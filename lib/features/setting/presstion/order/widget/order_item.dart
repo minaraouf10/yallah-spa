@@ -6,9 +6,12 @@ import 'package:yal_spa/generated/style_atoms.dart';
 import 'package:yal_spa/generated/translations.g.dart';
 
 import '../../../../../core/config/themes/app_colors.dart';
+import '../../../data/model/order_model.dart';
 
 class OrderItem extends StatelessWidget {
-  const OrderItem({super.key});
+  final OrderModel model;
+  final String typeOrder;
+  const OrderItem({super.key, required this.model,required this.typeOrder});
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +35,12 @@ class OrderItem extends StatelessWidget {
                     style: TextStyle(fontSize: 12.0, color: Color(0xffBC3455)),
                   ),
                   Text(
-                    '90 دقيقة',
+                    '${model.product.duration} دقيقة',
                     style: context.regular11TextSub,
                   )
                 ],
               ),
-              Container(
+              (typeOrder == 'current') ? Container(
                 width: 128,
                 height: 28,
                 alignment: Alignment(0, 0),
@@ -51,15 +54,29 @@ class OrderItem extends StatelessWidget {
                     fontSize: 12.0,
                   ),
                 ),
-              )
+              ) : Container(
+                width: 60,
+                height: 28,
+                alignment: Alignment(0, 0),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Color(0xffE1FFDC)),
+                child: Text(
+                  tr.Completed,
+                  style: TextStyle(
+                    color: Color(0xff07A104),
+                    fontSize: 12.0,
+                  ),
+                ),
+              ),
             ],
           ),
           Text(
-            'مكياج عيون سموكي',
+            model.product.nameAR,
             style: context.bold16TextMain,
           ),
           Text(
-            '230 ر.س',
+            '${model.product.price} ر.س',
             style: context.bold14TextSub,
           ),
           Text(
@@ -67,31 +84,45 @@ class OrderItem extends StatelessWidget {
             style: TextStyle(fontSize: 10.0, color: AppColors.textSub),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                spacing: 4.0,
-                children: [
-                  SvgPicture.asset(AssetsManger.locationCardIcon),
-                  Text(
-                    'مدينة الرياض بوليفارد، الرياض',
-                    style: TextStyle(fontSize: 10.0),
-                  )
-                ],
+              Expanded(
+                child: Row(
+                  children: [
+                    SvgPicture.asset(AssetsManger.locationCardIcon),
+                    SizedBox(width: 4.0),
+                    Expanded(
+                      child: Text(
+                        model.locationDescrption,
+                        style: TextStyle(fontSize: 10.0),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                spacing: 4.0,
-                children: [
-                  SvgPicture.asset(AssetsManger.clockCardIcons),
-                  Text(
-                    '13 سبتمبر 2024  08:45 PM',
-                    style: TextStyle(fontSize: 10.0),
-                  )
-                ],
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // محاذاة النص والصورة إلى اليمين
+                  children: [
+                    SvgPicture.asset(AssetsManger.clockCardIcons),
+                    SizedBox(width: 4.0),
+                    Expanded(
+                      child: Text(
+                        model.orderDate,
+                        style: TextStyle(fontSize: 10.0),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
-          Row(
+
+          (typeOrder == 'current') ? Row(
             spacing: 8.0,
             children: [
               Expanded(
@@ -115,7 +146,15 @@ class OrderItem extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ) :
+          CustomButton(
+            title: tr.Service_Provider_Evaluation,
+            onPress: () {},
+            height: 36.0,
+            borderRadius: BorderRadius.circular(0.0),
+            buttonColor: AppColors.secondaryLight,
+            textStyle: context.bold16TextMain,
+          ),
         ],
       ),
     );

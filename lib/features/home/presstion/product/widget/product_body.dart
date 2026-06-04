@@ -91,39 +91,48 @@ class ProductBody extends ConsumerWidget {
           Height(35.0),
           Row(
             children: [
-              CustomButton(
-                title: 'احجزي الآن',
-                onPress: () {},
-                width: 170.0,
-                height: 48.0,
-                suffixIconPath: AssetsManger.bookOrder,
+              Expanded(
+                flex: 2,
+                child: CustomButton(
+                  title: 'احجزي الآن',
+                  onPress: () {},
+                  width: 170.0,
+                  height: 48.0,
+                  suffixIconPath: AssetsManger.bookOrder,
+                ),
               ),
               Width(10.0),
-              InkWell(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: SvgPicture.asset(
-                    AssetsManger.cardButton,
-                    height: 48.0,
-                  )),
+              Expanded(
+                flex: 1,
+                child: InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: SvgPicture.asset(
+                      AssetsManger.cardButton,
+                      height: 48.0,
+                    )),
+              ),
               Width(15.0),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'السعر',
-                        style: context.regular14TextSub,
-                      ),
-                      Width(10.0),
-                      SvgPicture.asset(AssetsManger.arrowLeftIcon)
-                    ],
-                  ),
-                  Height(5.0),
-                  Text('${data.time[0].timePrice} ر.س ',
-                      style: context.bold16TextMain)
-                ],
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'السعر',
+                          style: context.regular14TextSub,
+                        ),
+                        Width(10.0),
+                        SvgPicture.asset(AssetsManger.arrowLeftIcon)
+                      ],
+                    ),
+                    Height(5.0),
+                    Text('${data.time[0].timePrice} ر.س ',
+                        style: context.bold16TextMain)
+                  ],
+                ),
               )
             ],
           )

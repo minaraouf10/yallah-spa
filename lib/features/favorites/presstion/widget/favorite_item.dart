@@ -34,7 +34,7 @@ class FavoriteItem extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image.network(
-                      data[index].products.gallery[0].galleryURL, // أول صورة في المعرض
+                      data[index].products.gallery[0].galleryURL,
                       width: 155.0,
                       height: 120.0,
                        fit: BoxFit.cover,

@@ -9,5 +9,6 @@ final serviceProvider = FutureProvider<List<HomeModel>>((ref) async {
   final homeService = ref.read(homeServiceProvider);
   final services = await homeService.getServicesData();
   log(services.toString(), name: 'service Provider');
+  log(services[0].id.toString(), name: 'service id Provider');
   return services;
 });

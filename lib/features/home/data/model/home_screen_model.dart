@@ -24,9 +24,10 @@ class HomeModel {
     descriptionEnG: json['description_en'] as String,
     descriptionAR: json['description_ar'] as String,
     image: json['image'] as String,
-    products: (json['products'] as List)
-        .map((e) => ProductData.fromJson(e))
-        .toList(),
+    products: (json['products'] as List?)
+        ?.map((e) => ProductData.fromJson(e))
+        .toList() ??
+        [],
   );
 
   Map<String, dynamic> toJson() {
@@ -43,6 +44,7 @@ class HomeModel {
 
 class ProductData {
   final int id;
+  final String duration;
   final String nameENG;
   final String nameAR;
   final String descriptionEnG;
@@ -52,6 +54,7 @@ class ProductData {
   final String serviceNameAR;
   final String serviceNameEN;
   final String target;
+  final int serviceId;
   final List <TypeData>type;
   final List<TimeData> time;
   final List<FrequencyData> frequency;
@@ -59,6 +62,7 @@ class ProductData {
 
   ProductData({
     required this.id,
+    required this.duration,
     required this.nameAR,
     required this.nameENG,
     required this.descriptionEnG,
@@ -72,10 +76,12 @@ class ProductData {
     required this.time,
     required this.frequency,
     required this.gallery,
+    required this.serviceId,
   });
 
   factory ProductData.fromJson(Map<String, dynamic> json) => ProductData(
     id: json['id'] as int,
+    duration: (json['duration'] as String?) ?? '90',
     nameAR: json['name_ar'] as String,
     nameENG: json['name_en'] as String,
     descriptionEnG: json['description_en'] as String,
@@ -85,14 +91,18 @@ class ProductData {
     serviceNameAR: json['service_name_ar'] as String,
     serviceNameEN: json['service_name_en'] as String,
     target: json['target'] as String,
-    type: (json['type'] as List).map((e) => TypeData.fromJson(e)).toList(),
-    time: (json['time'] as List).map((e) => TimeData.fromJson(e)).toList(),
-    frequency: (json['frequency'] as List)
-        .map((e) => FrequencyData.fromJson(e))
-        .toList(),
-    gallery: (json['gallery'] as List)
-        .map((e) => GalleryData.fromJson(e))
-        .toList(),
+    serviceId: json['service_id'] as int,
+    // Use null-aware operator to handle nullable lists
+    type: (json['type'] as List?)?.map((e) => TypeData.fromJson(e)).toList() ?? [],
+    time: (json['time'] as List?)?.map((e) => TimeData.fromJson(e)).toList() ?? [],
+    frequency: (json['frequency'] as List?)
+        ?.map((e) => FrequencyData.fromJson(e))
+        .toList() ??
+        [],
+    gallery: (json['gallery'] as List?)
+        ?.map((e) => GalleryData.fromJson(e))
+        .toList() ??
+        [],
   );
 }
 
@@ -127,10 +137,9 @@ class TimeData {
   });
 
   factory TimeData.fromJson(Map<String, dynamic> json) => TimeData(
-    timeId: json['id'] as int,
-    timeName: json['name'] as String,
-    timePrice: json['price'] as String,
-  );
+    timeId: json['id'] as int ?? 0,
+    timeName: json['name'] as String ?? '',
+    timePrice: json['price'].toString(),   );
 
 }
 
@@ -152,9 +161,9 @@ class FrequencyData {
   factory FrequencyData.fromJson(Map<String, dynamic> json) => FrequencyData(
     frequencyId: json['id'] as int,
     frequencyName: json['name'] as String,
-    frequencyPrice: json['price'] as String,
+    frequencyPrice: json['price'].toString(),
     frequencyDuration: json['duration'] as String,
-    frequencyCountOfSeason: json['count_of_seasson'] as String,
+    frequencyCountOfSeason: json['count_of_seasson'].toString(),
   );
 }
 

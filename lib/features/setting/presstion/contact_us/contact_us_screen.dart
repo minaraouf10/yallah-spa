@@ -10,7 +10,7 @@ import 'package:yal_spa/generated/translations.g.dart';
 
 import '../../../../core/config/themes/app_colors.dart';
 import '../../../../core/config/widgets/custom_button.dart';
-
+@RoutePage()
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
 

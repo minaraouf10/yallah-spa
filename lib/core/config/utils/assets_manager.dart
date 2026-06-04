@@ -54,4 +54,5 @@ class AssetsManger {
   static const locationCardIcon = '${iconsPath}locationCardIcon.svg';
   static const clockCardIcons = '${iconsPath}clockCardIcons.svg';
   static const redTrashIcons = '${iconsPath}redTrash.svg';
+  static const cardIcons = '${iconsPath}cards.svg';
 }

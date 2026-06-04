@@ -18,7 +18,7 @@ class SearchService {
 
   SearchService(this.client);
 
-  Future<List<SearchModel>> searchData(text) async {
+  Future<List<SearchModel>> searchData(String text) async {
     final body = {'search': text};
     final res = CustomResponse(
       await client.get(Endpoints.getAllProducts, query: body),

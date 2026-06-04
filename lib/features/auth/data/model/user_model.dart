@@ -10,7 +10,6 @@ class DataModel {
   factory DataModel.fromJson(Map<String, dynamic> json) => DataModel(
         token: json['token'] as String,
         user: UserModel.fromJson(json['user']),
-        //(json['user']).map((e) => UserModel.fromJson(e)),
         type: json['type'] as String,
       );
 }

@@ -11,8 +11,10 @@ class CategoryItem extends StatelessWidget {
     required this.image,
     required this.title,
     required this.data,
+    required this.id,
   });
 
+  final int id;
   final String image;
   final String title;
   final HomeModel data;

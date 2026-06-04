@@ -52,10 +52,12 @@ class _card_providerStates {
   final CustomState<bool> isLoading;
   final CustomState<String> isError;
   final CustomState<int> count;
+  final CustomState<int> totalPrice;
 
   _card_providerStates({required this.ref})
       : isLoading = CustomState<bool>(ref, false),
         isError = CustomState<String>(ref, ''),
-        count = CustomState<int>(ref, 0)
+        count = CustomState<int>(ref, 0),
+        totalPrice = CustomState<int>(ref, 0)
   ;
 }

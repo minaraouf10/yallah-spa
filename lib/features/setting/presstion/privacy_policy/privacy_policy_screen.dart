@@ -1,10 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
 
 import '../../../../core/config/widgets/custom_appbar.dart';
 import '../../../../generated/translations.g.dart';
 
-
+@RoutePage()
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
 

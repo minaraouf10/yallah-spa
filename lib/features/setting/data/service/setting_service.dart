@@ -8,6 +8,7 @@ import '../../../../core/api_helper/dio_client.dart';
 import '../../../../core/api_helper/dio_providers.dart';
 import '../../../../core/api_helper/endpoints.dart';
 import '../../../../core/config/utils/custom_state.dart';
+import '../model/order_model.dart';
 import '../model/profile_model.dart';
 
 final settingServiceProvider = Provider<SettingService>(
@@ -57,4 +58,28 @@ class SettingService {
     }
 
   }
+
+ Future<List<OrderModel>> getOrders(String status) async {
+    final query = {
+      'status': status,
+    };
+
+    final res = CustomResponse(await client.get(Endpoints.getAllOrders, query: query));
+    if (res.isError) throw res.message;
+    if (res.data is List){
+      final data = res.data as List;
+      final orderModels = data.map((e) => OrderModel.fromJson(e as Json)).toList();
+      log(orderModels.toString(),name:'orderModels is as List');
+      return orderModels;
+    }
+    else if(res.data is Json){
+      final data = res.data as Json;
+      final orderModels = OrderModel.fromJson(data);
+      log(orderModels.toString(),name:'orderModels is as map');
+      return [orderModels];
+    }
+    else {
+      throw 'Invalid response: Unexpected data format';
+    }
+ }
 }

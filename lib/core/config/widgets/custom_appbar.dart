@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
-
 import '../utils/assets_manager.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

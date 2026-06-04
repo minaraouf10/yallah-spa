@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yal_spa/core/config/extensions/context_extensions.dart';
+import 'package:yal_spa/core/config/extensions/future_provider_screen.dart';
 import 'package:yal_spa/core/config/router/router.dart';
 import 'package:yal_spa/core/config/themes/app_colors.dart';
 import 'package:yal_spa/core/config/utils/assets_manager.dart';
@@ -15,14 +17,16 @@ import 'package:yal_spa/generated/style_atoms.dart';
 import '../../../../../../../../core/config/widgets/custom_text_form_field.dart';
 import '../../../../../../../../generated/translations.g.dart';
 import '../../../../../../data/model/home_screen_model.dart';
+import '../../../../../product/controller/get_products.dart';
 
-class ItemCategoryBody extends StatelessWidget {
+class ItemCategoryBody extends ConsumerWidget {
   const ItemCategoryBody({super.key, required this.data});
 
   final HomeModel data;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -78,28 +82,45 @@ class ItemCategoryBody extends StatelessWidget {
             prefixIconColor: AppColors.textPlaceholder,
             suffixIconScale: 0.6,
           ),
-          Height(16.0),
-          Wrap(
-              spacing: 10.0,
-              runSpacing: 10.0,
-              children: data.products.map(
-                (item) {
-                  return SizedBox(
-                    child: InkWell(
-                      onTap: () {
-                        log('enter product screen');
-                        context.pushRoute(
-                          ProductRoute(data: item),
-                        );
-                      },
-                      child: ProductItem(
-                        data: item,
-                      ),
+          const Height(16.0),
+          ref.watchWhen(
+              provider: productsFutureProvider,
+            data: (product) {
+              if (product.isEmpty) {
+                return const Center(child: Text('No favorites found.'));
+              }
+              log('List of products');
+
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // عدد الأعمدة في الشبكة
+                  crossAxisSpacing: 10.0, // المسافة الأفقية بين العناصر
+                  mainAxisSpacing: 10.0, // المسافة العمودية بين العناصر
+                  childAspectRatio: 0.5, // نسبة العرض إلى الارتفاع لكل عنصر
+                ),
+                itemCount: product.where((item) => item.serviceId == data.id).length,
+                itemBuilder: (context, index) {
+                  var filteredProduct = product.where((item) => item.serviceId == data.id).toList()[index];
+                  return InkWell(
+                    onTap: () {
+                      log('enter product screen');
+                      log(filteredProduct.serviceId.toString());
+                      context.pushRoute(
+                        ProductRoute(data: filteredProduct),
+                      );
+                    },
+                    child: ProductItem(
+                      data: filteredProduct,
                     ),
                   );
                 },
-              ).toList()),
-        ],
+              );
+
+
+            }
+          )],
       ),
     );
   }

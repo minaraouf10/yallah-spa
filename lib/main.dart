@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart'; // Import Riverpod
 import 'package:yal_spa/core/config/router/router.dart';
 import 'package:yal_spa/core/config/themes/app_theme.dart';
 import 'package:yal_spa/generated/translations.g.dart';
-
 import 'core/data/locale/pref.dart';
 
 final globalRef = ProviderContainer();
@@ -46,11 +45,8 @@ class MyApp extends StatelessWidget {
       ],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
-        // إضافة الترجمة للـ Material
         GlobalWidgetsLocalizations.delegate,
-        // إضافة الترجمة للعناصر الأخرى
         GlobalCupertinoLocalizations.delegate,
-        // إضافة الترجمة للـ Cupertino (إذا كنت بحاجة لها)
       ],
       debugShowCheckedModeBanner: false,
       builder: (context, child) {

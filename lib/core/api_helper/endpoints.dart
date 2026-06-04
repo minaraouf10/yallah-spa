@@ -1,5 +1,5 @@
 abstract class Endpoints {
-  static const host = 'https://yallahspaapp.com/api/';
+  static const host = 'https://mina.ashel.site/api/';
 
   static const baseUrl = host;
   static const register = 'register';
@@ -11,4 +11,6 @@ abstract class Endpoints {
   static const getAllOffers = 'offer/index';
   static const getAllFavorite = 'client/favourite/index';
   static const getAllProducts = 'product/index';
+  static const getAllCard = 'client/cart/view';
+  static const getAllOrders = 'client/order/myOrders';
 }

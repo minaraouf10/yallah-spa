@@ -1,12 +1,10 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:yal_spa/features/bottom_nav/future_provider_screen.dart';
+import 'package:yal_spa/core/config/extensions/future_provider_screen.dart';
 import 'package:yal_spa/features/home/presstion/widget/category/widget/category_item.dart';
 import 'package:yal_spa/generated/style_atoms.dart';
 import 'package:yal_spa/generated/translations.g.dart';
-
 import '../../../../../core/config/widgets/custom_sized_box.dart';
 import '../../controller/service_provider.dart';
 
@@ -26,6 +24,18 @@ class Category extends ConsumerWidget {
               style: context.bold14Primary,
             ),
             const Height(12.0),
+            // GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //   crossAxisCount: 3, // number of items in each row
+            //   mainAxisSpacing: 8.0, // spacing between rows
+            //   crossAxisSpacing: 8.0, // spacing between columns
+            // ), itemBuilder: (context, index) {
+            //   return CategoryItem(
+            //     image: data[index].image,
+            //     title: data[index].nameAR,
+            //     data: data[index],
+            //     id: data[index].id,
+            //   );
+            // }, itemCount: data.length,),
             Wrap(
               spacing: 10.0,
               runSpacing: 10.0,
@@ -35,6 +45,7 @@ class Category extends ConsumerWidget {
                   child: CategoryItem(
                     image: item.image,
                     title: item.nameAR,
+                    id: item.id,
                     data: item,
                   ),
                 );

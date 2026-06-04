@@ -14,10 +14,10 @@ class SearchModel {
   final String createdAt;
   final int isDeleted;
   final bool isFav;
-  final List <TypeData>type;
+  final List<TypeData> type;
   final List<TimeData> time;
   final List<FrequencyData> frequency;
-  final List <GalleryData>gallery;
+  final List<GalleryData> gallery;
 
   SearchModel({
     required this.id,
@@ -42,29 +42,37 @@ class SearchModel {
   });
 
   factory SearchModel.fromJson(Map<String, dynamic> json) => SearchModel(
-    isFav:json['is_fav'] as bool ,
-    isDeleted: json['is_deleted'] as int,
-    duration: json['duration'] as String,
-    createdAt: json['created_at'] as String,
-    price: json['price'] as String,
+    isFav: json['is_fav'] as bool? ?? false,
+    isDeleted: json['is_deleted'] as int? ?? 0,
+    duration: json['duration'] as String? ?? '',
+    createdAt: json['created_at'] as String? ?? '',
+    price: json['price'] as String? ?? '',
     id: json['id'] as int,
-    nameAR: json['name_ar'] as String,
-    nameENG: json['name_en'] as String,
-    descriptionEnG: json['description_en'] as String,
-    descriptionAR: json['description_ar'] as String,
-    classs: json['class'] as String,
-    binfites: json['binfites'] as String,
-    serviceNameAR: json['service_name_ar'] as String,
-    serviceNameEN: json['service_name_en'] as String,
-    target: json['target'] as String,
-    type: (json['type'] as List).map((e) => TypeData.fromJson(e)).toList(),
-    time: (json['time'] as List).map((e) => TimeData.fromJson(e)).toList(),
-    frequency: (json['frequency'] as List)
-        .map((e) => FrequencyData.fromJson(e))
-        .toList(),
-    gallery: (json['gallery'] as List)
-        .map((e) => GalleryData.fromJson(e))
-        .toList(),
+    nameAR: json['name_ar'] as String? ?? '',
+    nameENG: json['name_en'] as String? ?? '',
+    descriptionEnG: json['description_en'] as String? ?? '',
+    descriptionAR: json['description_ar'] as String? ?? '',
+    classs: json['class'] as String? ?? '',
+    binfites: json['binfites'] as String? ?? '',
+    serviceNameAR: json['service_name_ar'] as String? ?? '',
+    serviceNameEN: json['service_name_en'] as String? ?? '',
+    target: json['target'] as String? ?? '',
+    type: (json['type'] as List?)
+        ?.map((e) => TypeData.fromJson(e))
+        .toList() ??
+        [],
+    time: (json['time'] as List?)
+        ?.map((e) => TimeData.fromJson(e))
+        .toList() ??
+        [],
+    frequency: (json['frequency'] as List?)
+        ?.map((e) => FrequencyData.fromJson(e))
+        .toList() ??
+        [],
+    gallery: (json['gallery'] as List?)
+        ?.map((e) => GalleryData.fromJson(e))
+        .toList() ??
+        [],
   );
 }
 
@@ -80,11 +88,10 @@ class TypeData {
   });
 
   factory TypeData.fromJson(Map<String, dynamic> json) => TypeData(
-    typeId: json['id'] as int,
-    typeName: json['name'] as String,
-    typeDescription: json['description'] as String,
-  );
-
+        typeId: json['id'] as int,
+        typeName: json['name'] as String,
+        typeDescription: json['description'] as String,
+      );
 }
 
 class TimeData {
@@ -99,11 +106,10 @@ class TimeData {
   });
 
   factory TimeData.fromJson(Map<String, dynamic> json) => TimeData(
-    timeId: json['id'] as int,
-    timeName: json['name'] as String,
-    timePrice: json['price'] as String,
-  );
-
+        timeId: json['id'] as int,
+        timeName: json['name'] as String,
+        timePrice: json['price'] as String,
+      );
 }
 
 class FrequencyData {
@@ -122,12 +128,12 @@ class FrequencyData {
   });
 
   factory FrequencyData.fromJson(Map<String, dynamic> json) => FrequencyData(
-    frequencyId: json['id'] as int,
-    frequencyName: json['name'] as String,
-    frequencyPrice: json['price'] as String,
-    frequencyDuration: json['duration'] as String,
-    frequencyCountOfSeason: json['count_of_seasson'] as String,
-  );
+        frequencyId: json['id'] as int,
+        frequencyName: json['name'] as String,
+        frequencyPrice: json['price'] as String,
+        frequencyDuration: json['duration'] as String,
+        frequencyCountOfSeason: json['count_of_seasson'] as String,
+      );
 }
 
 class GalleryData {
@@ -140,7 +146,7 @@ class GalleryData {
   });
 
   factory GalleryData.fromJson(Map<String, dynamic> json) => GalleryData(
-    galleryId: json['id'] as int,
-    galleryURL: json['url'] as String,
-  );
+        galleryId: json['id'] as int,
+        galleryURL: json['url'] as String,
+      );
 }

@@ -49,3 +49,98 @@
 //     );
 //   }
 // }
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yal_spa/core/config/utils/assets_manager.dart';
+
+import 'controller/search_provider_screen.dart';
+
+class CustomSearchBar extends SearchDelegate<String> {
+  final WidgetRef ref;
+
+  CustomSearchBar({required this.ref});
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        onPressed: () {
+          query = '';
+        },
+        icon: Icon(Icons.clear),
+      ),
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return Transform.scale(
+      scale: 0.45,
+      child: InkWell(
+        onTap: () {
+          close(context, '');
+        },
+        child: Icon(Icons.arrow_back), // استبدال الصورة بأيقونة عادية
+      ),
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final searchLogic = ref.read(searchProvider);
+
+    // تأجيل استدعاء search()
+    Future(() {
+      searchLogic.search(query);
+    });
+
+    final isLoading = ref.watch(searchProvider.select((state) => state.isLoading.state));
+    final results = searchLogic.searchData;
+
+    if (isLoading) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+
+    if (results.isEmpty) {
+      return Center(
+        child: Text('No results found'),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: results.length,
+      itemBuilder: (context, index) {
+        final item = results[index];
+        return ListTile(
+          title: Text(item.nameAR),
+          subtitle: Text(item.descriptionAR ?? ''),
+          onTap: () {
+            close(context, item.nameAR);
+          },
+        );
+      },
+    );
+  }
+
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text('Suggestion $index'),
+          onTap: () {
+            query = 'Suggestion $index';
+            showResults(context);
+          },
+        );
+      },
+    );
+  }
+}
+

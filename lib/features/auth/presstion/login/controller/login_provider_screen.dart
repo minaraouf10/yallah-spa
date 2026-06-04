@@ -17,22 +17,6 @@ class LoginLogic extends _LoginStates {
 
   final TextEditingController phoneController = TextEditingController();
 
-  // Future<void> userLogin() async {
-  //   try {
-  //     isLoading.state = true;
-  //
-  //     await authService.login(
-  //       phoneController.text.trim(),
-  //     );
-  //     isSuccess.state = true;
-  //   } catch (e, s) {
-  //     isError.state = e.toString();
-  //     log(isError.state, stackTrace: s);
-  //   } finally {
-  //     isLoading.state = false;
-  //   }
-  // }
-
   Future<void> userLogin() async {
     try {
       isLoading.state = true;

@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 162 (81 per locale)
+/// Strings: 186 (93 per locale)
 ///
-/// Built on 2025-01-11 at 11:39 UTC
+/// Built on 2025-02-04 at 12:46 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,9 +149,14 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	String get Activation_code => 'رمز التفعيل';
+	String get Booking_details => 'تفاصيل الحجز';
+	String get Cancel_order => 'إلغاء الطلب';
 	String get Cancel_service_request => 'الغاء طلب الخدمة';
+	String get Cash_on_delivery => 'الدفع كاش عند الإستلام';
 	String get Change_language => 'تغيير اللغة';
+	String get Completed => 'مكتمل';
 	String get Contact_Information => 'معلومات الاتصال';
+	String get Contact_information => 'بيانات التواصل';
 	String get Contact_us   => 'تواصل معنا';
 	String get Current_Orders => 'الطلبات الحالية';
 	String get Delete_account => 'حذف الحساب';
@@ -173,10 +178,14 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get Log_out => 'تسجيل خروج';
 	String get Makeup_and_eyelashes => 'المكياجُ والرموشُ';
 	String get Mobile_number => 'رقم الجوال';
+	String get Order_Details => 'تفاصيل الطلب';
 	String get Previous_requests => 'الطلبات السابقة';
+	String get Products => 'المنتجات';
 	String get Reschedule => 'اعاده الجدولة';
 	String get Resend => 'إعادة إرسال';
+	String get Service_Provider_Evaluation => 'تقييم مقدم الخدمة';
 	String get Share_app => 'شارك التطبيق';
+	String get Subtotal => 'المجموع الفرعي';
 	String get To_modify_your_personal_account_information => 'لتعديل بيانات حسابك الشخصي';
 	String get We_have_sent_the_activation_code_to_the_number => 'لقد قمنا بإرسال رمز التفعيل إلى الرقم';
 	String get Your_beauty_is_a_journey_that_begins_with_our_services => ' جمالكِ رحلةٌ تبدأُ بخدماتِنا!';
@@ -194,6 +203,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get confirm_password_not_empty => 'يجب ألا يكون تأكيد كلمة المرور فارغًا';
 	String get create_an_account => 'إنشاء حساب';
 	String get delivery_to => 'التوصيل إلى';
+	String get discount => 'الخصم';
 	String get discover_the_best_foods => 'اكتشف أفضل الأطعمة من أكثر من 1000';
 	String get donot_have_an_account  => 'ليس لديك حساب؟';
 	String get email => 'البريد الالكتروني';
@@ -203,6 +213,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get favorites => 'المفضلات';
 	String get forget_password => 'نسيت كلمة السر؟';
 	String get home => 'الرئيسية';
+	String get in_the_way => 'فى الطريق';
 	String get invalid_field => 'حقل غير صالح';
 	String get login => 'تسجيل الدخول';
 	String get login_with => 'أو تسجيل الدخول باستخدام';
@@ -229,6 +240,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get something_error_try_again => 'حدث خطأ ما يرجى المحاولة مرة أخرى';
 	String get sure => 'تأكيد';
 	String get terms_and_conditions  => 'الأحكام والشروط';
+	String get the_total => 'المجموع';
 }
 
 // Path: <root>
@@ -256,9 +268,14 @@ class _TranslationsEn implements Translations {
 
 	// Translations
 	@override String get Activation_code => 'Activation code';
+	@override String get Booking_details => 'Booking details';
+	@override String get Cancel_order => 'Cancel order';
 	@override String get Cancel_service_request => 'Cancel service request';
+	@override String get Cash_on_delivery => 'Cash on delivery';
 	@override String get Change_language => 'Change language';
+	@override String get Completed => 'Completed';
 	@override String get Contact_Information => 'Contact Information';
+	@override String get Contact_information => 'Contact information';
 	@override String get Contact_us   => 'Contact us';
 	@override String get Current_Orders => 'Current Orders';
 	@override String get Delete_account => 'Delete account';
@@ -280,10 +297,14 @@ class _TranslationsEn implements Translations {
 	@override String get Log_out => 'Delete_account';
 	@override String get Makeup_and_eyelashes => 'Makeup and eyelashes';
 	@override String get Mobile_number => 'Mobile number';
+	@override String get Order_Details => 'Order Details';
 	@override String get Previous_requests => 'Previous requests';
+	@override String get Products => 'Products';
 	@override String get Reschedule => 'Reschedule';
 	@override String get Resend => 'Resend';
+	@override String get Service_Provider_Evaluation => 'Service Provider Evaluation';
 	@override String get Share_app => 'Share app';
+	@override String get Subtotal => 'Subtotal';
 	@override String get To_modify_your_personal_account_information => 'To modify your personal account information';
 	@override String get We_have_sent_the_activation_code_to_the_number => 'We have sent the activation code to the number';
 	@override String get Your_beauty_is_a_journey_that_begins_with_our_services => 'Your beauty is a journey that begins with our services!';
@@ -301,6 +322,7 @@ class _TranslationsEn implements Translations {
 	@override String get confirm_password_not_empty => 'confirm password must not empty';
 	@override String get create_an_account => 'Create an Account';
 	@override String get delivery_to => 'Delivery to';
+	@override String get discount => 'discount';
 	@override String get discover_the_best_foods => 'Discover the best foods from over 1,000 ';
 	@override String get donot_have_an_account  => 'Don\'t have an Account? ';
 	@override String get email => 'Email';
@@ -310,6 +332,7 @@ class _TranslationsEn implements Translations {
 	@override String get favorites => 'Favorites';
 	@override String get forget_password => 'Forgot your password?';
 	@override String get home => 'Home';
+	@override String get in_the_way => 'in the way';
 	@override String get invalid_field => 'Invalid field';
 	@override String get login => 'Login';
 	@override String get login_with => 'or Login With';
@@ -336,6 +359,7 @@ class _TranslationsEn implements Translations {
 	@override String get something_error_try_again => 'Something Happened Error Please Try Again';
 	@override String get sure => 'Sure';
 	@override String get terms_and_conditions  => 'terms and conditions';
+	@override String get the_total => 'the_total';
 }
 
 /// Flat map(s) containing all translations.
@@ -345,9 +369,14 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'Activation_code': return 'رمز التفعيل';
+			case 'Booking_details': return 'تفاصيل الحجز';
+			case 'Cancel_order': return 'إلغاء الطلب';
 			case 'Cancel_service_request': return 'الغاء طلب الخدمة';
+			case 'Cash_on_delivery': return 'الدفع كاش عند الإستلام';
 			case 'Change_language': return 'تغيير اللغة';
+			case 'Completed': return 'مكتمل';
 			case 'Contact_Information': return 'معلومات الاتصال';
+			case 'Contact_information': return 'بيانات التواصل';
 			case 'Contact_us  ': return 'تواصل معنا';
 			case 'Current_Orders': return 'الطلبات الحالية';
 			case 'Delete_account': return 'حذف الحساب';
@@ -369,10 +398,14 @@ extension on Translations {
 			case 'Log_out': return 'تسجيل خروج';
 			case 'Makeup_and_eyelashes': return 'المكياجُ والرموشُ';
 			case 'Mobile_number': return 'رقم الجوال';
+			case 'Order_Details': return 'تفاصيل الطلب';
 			case 'Previous_requests': return 'الطلبات السابقة';
+			case 'Products': return 'المنتجات';
 			case 'Reschedule': return 'اعاده الجدولة';
 			case 'Resend': return 'إعادة إرسال';
+			case 'Service_Provider_Evaluation': return 'تقييم مقدم الخدمة';
 			case 'Share_app': return 'شارك التطبيق';
+			case 'Subtotal': return 'المجموع الفرعي';
 			case 'To_modify_your_personal_account_information': return 'لتعديل بيانات حسابك الشخصي';
 			case 'We_have_sent_the_activation_code_to_the_number': return 'لقد قمنا بإرسال رمز التفعيل إلى الرقم';
 			case 'Your_beauty_is_a_journey_that_begins_with_our_services': return ' جمالكِ رحلةٌ تبدأُ بخدماتِنا!';
@@ -390,6 +423,7 @@ extension on Translations {
 			case 'confirm_password_not_empty': return 'يجب ألا يكون تأكيد كلمة المرور فارغًا';
 			case 'create_an_account': return 'إنشاء حساب';
 			case 'delivery_to': return 'التوصيل إلى';
+			case 'discount': return 'الخصم';
 			case 'discover_the_best_foods': return 'اكتشف أفضل الأطعمة من أكثر من 1000';
 			case 'donot_have_an_account ': return 'ليس لديك حساب؟';
 			case 'email': return 'البريد الالكتروني';
@@ -399,6 +433,7 @@ extension on Translations {
 			case 'favorites': return 'المفضلات';
 			case 'forget_password': return 'نسيت كلمة السر؟';
 			case 'home': return 'الرئيسية';
+			case 'in_the_way': return 'فى الطريق';
 			case 'invalid_field': return 'حقل غير صالح';
 			case 'login': return 'تسجيل الدخول';
 			case 'login_with': return 'أو تسجيل الدخول باستخدام';
@@ -425,6 +460,7 @@ extension on Translations {
 			case 'something_error_try_again': return 'حدث خطأ ما يرجى المحاولة مرة أخرى';
 			case 'sure': return 'تأكيد';
 			case 'terms_and_conditions ': return 'الأحكام والشروط';
+			case 'the_total': return 'المجموع';
 			default: return null;
 		}
 	}
@@ -434,9 +470,14 @@ extension on _TranslationsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'Activation_code': return 'Activation code';
+			case 'Booking_details': return 'Booking details';
+			case 'Cancel_order': return 'Cancel order';
 			case 'Cancel_service_request': return 'Cancel service request';
+			case 'Cash_on_delivery': return 'Cash on delivery';
 			case 'Change_language': return 'Change language';
+			case 'Completed': return 'Completed';
 			case 'Contact_Information': return 'Contact Information';
+			case 'Contact_information': return 'Contact information';
 			case 'Contact_us  ': return 'Contact us';
 			case 'Current_Orders': return 'Current Orders';
 			case 'Delete_account': return 'Delete account';
@@ -458,10 +499,14 @@ extension on _TranslationsEn {
 			case 'Log_out': return 'Delete_account';
 			case 'Makeup_and_eyelashes': return 'Makeup and eyelashes';
 			case 'Mobile_number': return 'Mobile number';
+			case 'Order_Details': return 'Order Details';
 			case 'Previous_requests': return 'Previous requests';
+			case 'Products': return 'Products';
 			case 'Reschedule': return 'Reschedule';
 			case 'Resend': return 'Resend';
+			case 'Service_Provider_Evaluation': return 'Service Provider Evaluation';
 			case 'Share_app': return 'Share app';
+			case 'Subtotal': return 'Subtotal';
 			case 'To_modify_your_personal_account_information': return 'To modify your personal account information';
 			case 'We_have_sent_the_activation_code_to_the_number': return 'We have sent the activation code to the number';
 			case 'Your_beauty_is_a_journey_that_begins_with_our_services': return 'Your beauty is a journey that begins with our services!';
@@ -479,6 +524,7 @@ extension on _TranslationsEn {
 			case 'confirm_password_not_empty': return 'confirm password must not empty';
 			case 'create_an_account': return 'Create an Account';
 			case 'delivery_to': return 'Delivery to';
+			case 'discount': return 'discount';
 			case 'discover_the_best_foods': return 'Discover the best foods from over 1,000 ';
 			case 'donot_have_an_account ': return 'Don\'t have an Account? ';
 			case 'email': return 'Email';
@@ -488,6 +534,7 @@ extension on _TranslationsEn {
 			case 'favorites': return 'Favorites';
 			case 'forget_password': return 'Forgot your password?';
 			case 'home': return 'Home';
+			case 'in_the_way': return 'in the way';
 			case 'invalid_field': return 'Invalid field';
 			case 'login': return 'Login';
 			case 'login_with': return 'or Login With';
@@ -514,6 +561,7 @@ extension on _TranslationsEn {
 			case 'something_error_try_again': return 'Something Happened Error Please Try Again';
 			case 'sure': return 'Sure';
 			case 'terms_and_conditions ': return 'terms and conditions';
+			case 'the_total': return 'the_total';
 			default: return null;
 		}
 	}

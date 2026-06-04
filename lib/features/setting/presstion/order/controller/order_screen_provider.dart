@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/config/utils/custom_state.dart';
@@ -15,6 +17,11 @@ class OrderScreenLogic extends _OrderScreenStates {
     isLoading.state = false;
   }
 
+  void changeCurrentOrder() {
+    isCurrent.state = !isCurrent.state;
+    log(isCurrent.state.toString(),name: 'isCurrent');
+  }
+
   void getCurrentOrder()  {
     isLoading.state = true;
 
@@ -24,7 +31,9 @@ class OrderScreenLogic extends _OrderScreenStates {
 class _OrderScreenStates {
   final ProviderRef ref;
   final CustomState<bool> isLoading;
+  final CustomState<bool> isCurrent;
 
   _OrderScreenStates({required this.ref})
-      : isLoading = CustomState<bool>(ref, false);
+      : isLoading = CustomState<bool>(ref, false),
+        isCurrent = CustomState<bool>(ref, true);
 }

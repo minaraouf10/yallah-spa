@@ -47,7 +47,7 @@ class EditProfileScreen extends StatelessWidget {
                     flex: 1,
                     child: CustomButton(
                       title: tr.save,
-                      onPress: ()=> context.pushRoute(EditProfileOtpRouter()),
+                      onPress: ()=> context.pushRoute(EditProfileOtpRoute()),
                       height: 45,
                     )),
                 Width(12.0),

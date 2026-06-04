@@ -20,7 +20,7 @@ class ArticlesItem extends ConsumerWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () => context.pushRoute(
-                  ArticlesItemBodyRouter(data: data[index]),
+                  ArticlesItemBodyRoute(data: data[index]),
                 ),
                 child: Row(
                   spacing: 8.0,

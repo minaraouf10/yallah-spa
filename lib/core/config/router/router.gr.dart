@@ -15,13 +15,59 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AboutAppRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AboutAppScreen(),
+      );
+    },
+    ArticlesItemBodyRoute.name: (routeData) {
+      final args = routeData.argsAs<ArticlesItemBodyRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ArticlesItemBody(
+          data: args.data,
+          key: args.key,
+        ),
+      );
+    },
+    ArticlesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ArticlesScreen(),
+      );
+    },
     CardRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const CardScreen(),
       );
     },
-    EnterLocationRouter.name: (routeData) {
+    ContactUsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ContactUsScreen(),
+      );
+    },
+    DeleteAccountRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DeleteAccountScreen(),
+      );
+    },
+    EditProfileOtpRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EditProfileOtp(),
+      );
+    },
+    EditProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EditProfileScreen(),
+      );
+    },
+    EnterLocationRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const EnterLocation(),
@@ -47,6 +93,22 @@ abstract class _$AppRouter extends RootStackRouter {
           key: args.key,
           data: args.data,
         ),
+      );
+    },
+    ItemOrderDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<ItemDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ItemOrderDetails(
+          key: args.key,
+          model: args.model,
+        ),
+      );
+    },
+    ItemServiceTeamRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ItemServiceTeam(),
       );
     },
     LocationRoute.name: (routeData) {
@@ -75,10 +137,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OffersScreen(),
       );
     },
+    OrderRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OrderScreen(),
+      );
+    },
     OtpRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OtpScreen(),
+      );
+    },
+    PrivacyPolicyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PrivacyPolicyScreen(),
       );
     },
     ProductRoute.name: (routeData) {
@@ -97,77 +171,85 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SettingScreen(),
       );
     },
-    YallahSpaLayOutRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const YallahSpaLayOut(),
-      );
-    },
-    EditProfileRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const EditProfileScreen(),
-      );
-    },
-    EditProfileOtpRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const EditProfileOtp(),
-      );
-    },
-    AboutAppRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const AboutAppScreen(),
-      );
-    },
-    TermsAndConditionsRouter.name: (routeData) {
+    TermsAndConditionsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const TermsAndConditionsScreen(),
       );
     },
-    PrivacyPolicyRouter.name: (routeData) {
+    YallahSpaLayOutRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const PrivacyPolicyScreen(),
-      );
-    },
-    ContactUsRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ContactUsScreen(),
-      );
-    },
-    ArticlesRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ArticlesScreen(),
-      );
-    },
-    ArticlesItemBodyRouter.name: (routeData) {
-      final args = routeData.argsAs<ArticlesItemBodyRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child:  ArticlesItemBody(
-          key: args.key,
-          data: args.data,
-        ),
-      );
-    },
-    OrderRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OrderScreen(),
-      );
-    },
-    DeleteAccountRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const DeleteAccountScreen(),
+        child: const YallahSpaLayOut(),
       );
     },
   };
+}
+
+/// generated route for
+/// [AboutAppScreen]
+class AboutAppRoute extends PageRouteInfo<void> {
+  const AboutAppRoute({List<PageRouteInfo>? children})
+      : super(
+          AboutAppRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AboutAppRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ArticlesItemBodyRoute]
+class ArticlesItemBodyRoute extends PageRouteInfo<ArticlesItemBodyRouteArgs> {
+  ArticlesItemBodyRoute({
+    required ArticlesModel data,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+    ArticlesItemBodyRoute.name,
+          args: ArticlesItemBodyRouteArgs(
+            data: data,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ArticlesItemBodyRoute';
+
+  static const PageInfo<ArticlesItemBodyRouteArgs> page =
+      PageInfo<ArticlesItemBodyRouteArgs>(name);
+}
+
+class ArticlesItemBodyRouteArgs {
+  const ArticlesItemBodyRouteArgs({
+    required this.data,
+    this.key,
+  });
+
+  final ArticlesModel data;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ArticlesItemBodyRouteArgs{data: $data, key: $key}';
+  }
+}
+
+/// generated route for
+/// [ArticlesScreen]
+class ArticlesRoute extends PageRouteInfo<void> {
+  const ArticlesRoute({List<PageRouteInfo>? children})
+      : super(
+          ArticlesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ArticlesRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -185,15 +267,71 @@ class CardRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [EnterLocation]
-class EnterLocationRouter extends PageRouteInfo<void> {
-  const EnterLocationRouter({List<PageRouteInfo>? children})
+/// [ContactUsScreen]
+class ContactUsRoute extends PageRouteInfo<void> {
+  const ContactUsRoute({List<PageRouteInfo>? children})
       : super(
-    EnterLocationRouter.name,
+          ContactUsRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'EnterLocationRouter';
+  static const String name = 'ContactUsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DeleteAccountScreen]
+class DeleteAccountRoute extends PageRouteInfo<void> {
+  const DeleteAccountRoute({List<PageRouteInfo>? children})
+      : super(
+          DeleteAccountRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DeleteAccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EditProfileOtpRoute]
+class EditProfileOtpRoute extends PageRouteInfo<void> {
+  const EditProfileOtpRoute({List<PageRouteInfo>? children})
+      : super(
+    EditProfileOtpRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EditProfileOtpRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EditProfileScreen]
+class EditProfileRoute extends PageRouteInfo<void> {
+  const EditProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          EditProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EditProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EnterLocationRoute]
+class EnterLocationRoute extends PageRouteInfo<void> {
+  const EnterLocationRoute({List<PageRouteInfo>? children})
+      : super(
+    EnterLocationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EnterLocationRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -262,6 +400,57 @@ class ItemCategoryRouteArgs {
   String toString() {
     return 'ItemCategoryRouteArgs{key: $key, data: $data}';
   }
+}
+
+/// generated route for
+/// [ItemDetailsRoute]
+class ItemOrderDetailsRoute extends PageRouteInfo<ItemDetailsRouteArgs> {
+  ItemOrderDetailsRoute({
+    Key? key,
+    required OrderModel model,
+    List<PageRouteInfo>? children,
+  }) : super(
+    ItemOrderDetailsRoute.name,
+          args: ItemDetailsRouteArgs(
+            key: key,
+            model: model,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ItemOrderDetailsRoute';
+
+  static const PageInfo<ItemDetailsRouteArgs> page = PageInfo<ItemDetailsRouteArgs>(name);
+}
+
+class ItemDetailsRouteArgs {
+  const ItemDetailsRouteArgs({
+    this.key,
+    required this.model,
+  });
+
+  final Key? key;
+
+  final OrderModel model;
+
+  @override
+  String toString() {
+    return 'ItemDetailsRouteArgs{key: $key, model: $model}';
+  }
+}
+
+/// generated route for
+/// [ItemServiceTeamRoute]
+class ItemServiceTeamRoute extends PageRouteInfo<void> {
+  const ItemServiceTeamRoute({List<PageRouteInfo>? children})
+      : super(
+    ItemServiceTeamRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ItemServiceTeamRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -335,6 +524,20 @@ class OffersRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OrderScreen]
+class OrderRoute extends PageRouteInfo<void> {
+  const OrderRoute({List<PageRouteInfo>? children})
+      : super(
+          OrderRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OrderRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [OtpScreen]
 class OtpRoute extends PageRouteInfo<void> {
   const OtpRoute({List<PageRouteInfo>? children})
@@ -344,6 +547,20 @@ class OtpRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'OtpRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PrivacyPolicyScreen]
+class PrivacyPolicyRoute extends PageRouteInfo<void> {
+  const PrivacyPolicyRoute({List<PageRouteInfo>? children})
+      : super(
+          PrivacyPolicyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PrivacyPolicyRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -401,179 +618,29 @@ class SettingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [YallahSpaLayOut]
-class YallahSpaLayOutRouter extends PageRouteInfo<void> {
-  const YallahSpaLayOutRouter({List<PageRouteInfo>? children})
+/// [TermsAndConditionsScreen]
+class TermsAndConditionsRoute extends PageRouteInfo<void> {
+  const TermsAndConditionsRoute({List<PageRouteInfo>? children})
       : super(
-    YallahSpaLayOutRouter.name,
+          TermsAndConditionsRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'YallahSpaLayOutRouter';
+  static const String name = 'TermsAndConditionsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [Edit Profile]
-class EditProfileRouter extends PageRouteInfo<void> {
-  const EditProfileRouter({List<PageRouteInfo>? children})
+/// [YallahSpaLayOutRoute]
+class YallahSpaLayOutRoute extends PageRouteInfo<void> {
+  const YallahSpaLayOutRoute({List<PageRouteInfo>? children})
       : super(
-    EditProfileRouter.name,
-    initialChildren: children,
-  );
+    YallahSpaLayOutRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'EditProfileRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [Edit Profile]
-class EditProfileOtpRouter extends PageRouteInfo<void> {
-  const EditProfileOtpRouter({List<PageRouteInfo>? children})
-      : super(
-    EditProfileOtpRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'EditProfileOtpRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [About App]
-class AboutAppRouter extends PageRouteInfo<void> {
-  const AboutAppRouter({List<PageRouteInfo>? children})
-      : super(
-    AboutAppRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'AboutAppRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [About App]
-class TermsAndConditionsRouter extends PageRouteInfo<void> {
-  const TermsAndConditionsRouter({List<PageRouteInfo>? children})
-      : super(
-    TermsAndConditionsRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'TermsAndConditionsRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [Privacy Policy]
-class PrivacyPolicyRouter extends PageRouteInfo<void> {
-  const PrivacyPolicyRouter({List<PageRouteInfo>? children})
-      : super(
-    PrivacyPolicyRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'PrivacyPolicyRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [Contact Us]
-class ContactUsRouter extends PageRouteInfo<void> {
-  const ContactUsRouter({List<PageRouteInfo>? children})
-      : super(
-    ContactUsRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'ContactUsRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [articles]
-class ArticlesRouter extends PageRouteInfo<void> {
-  const ArticlesRouter({List<PageRouteInfo>? children})
-      : super(
-    ArticlesRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'ArticlesRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ArticlesItemBody]
-class ArticlesItemBodyRouter extends PageRouteInfo<void> {
-  ArticlesItemBodyRouter({
-    Key? key,
-    required ArticlesModel data,
-    List<PageRouteInfo>? children,
-  }) : super(
-    ArticlesItemBodyRouter.name,
-    args: ArticlesItemBodyRouteArgs(
-      key: key,
-      data: data,
-    ),
-    initialChildren: children,
-  );
-
-  static const String name = 'ArticlesItemBodyRouter';
-
-  static const PageInfo<ArticlesItemBodyRouteArgs> page =
-  PageInfo<ArticlesItemBodyRouteArgs>(name);
-}
-
-class ArticlesItemBodyRouteArgs {
-  const ArticlesItemBodyRouteArgs({
-    this.key,
-    required this.data,
-  });
-
-  final Key? key;
-
-  final ArticlesModel data;
-
-  @override
-  String toString() {
-    return 'ArticlesItemBodyRouteArgs{key: $key, data: $data}';
-  }
-}
-
-/// generated route for
-/// [OrderRouter]
-class OrderRouter extends PageRouteInfo<void> {
-  const OrderRouter({List<PageRouteInfo>? children})
-      : super(
-    OrderRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'OrderRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [DeleteAccountRouter]
-class DeleteAccountRouter extends PageRouteInfo<void> {
-  const DeleteAccountRouter({List<PageRouteInfo>? children})
-      : super(
-    DeleteAccountRouter.name,
-    initialChildren: children,
-  );
-
-  static const String name = 'DeleteAccountRouter';
+  static const String name = 'YallahSpaLayOutRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

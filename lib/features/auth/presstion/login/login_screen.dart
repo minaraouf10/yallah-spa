@@ -16,21 +16,18 @@ import 'controller/login_provider_screen.dart';
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
 
-
-
   @override
   Widget build(BuildContext context, ref) {
     final loginProvider = ref.watch(loginProviderScreen);
-    bool isChecked = ref.watch(loginProvider.isChecked.provider) ;
 
     ref.watch(loginProvider.isChecked.provider);
 
-    ref.listen(loginProvider.isError.provider, (_, state) {
-      context.showCustomSnackBar(
-        message: state,
-        snackBarStatus: SnackBarStatus.error,
-      );
-    });
+    // ref.listen(loginProvider.isError.provider, (_, state) {
+    //   context.showCustomSnackBar(
+    //     message: state,
+    //     snackBarStatus: SnackBarStatus.error,
+    //   );
+    // });
 
     ref.listen(loginProvider.isSuccess.provider, (_, state) {
       if (state) {
@@ -131,7 +128,7 @@ class LoginScreen extends ConsumerWidget {
                   ),
                   const Height(12.0),
                   InkWell(
-                    onTap: () => context.pushRoute(YallahSpaLayOutRouter()),
+                    onTap: () => context.pushRoute(YallahSpaLayOutRoute()),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

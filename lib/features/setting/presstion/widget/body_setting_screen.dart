@@ -24,37 +24,37 @@ class BodySettingScreen extends StatelessWidget {
           ItemSetting(
             icon: AssetsManger.editProfile,
             title: tr.Edit_your_personal_account_information,
-            onPress: () => context.pushRoute(EditProfileRouter()),
+            onPress: () => context.pushRoute(EditProfileRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.orders,
             title: tr.orders,
-            onPress: () => context.pushRoute(OrderRouter()),
+            onPress: () => context.pushRoute(OrderRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.articles,
             title: tr.articles,
-            onPress: () => context.pushRoute(ArticlesRouter()),
+            onPress: () => context.pushRoute(ArticlesRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.aboutApp,
             title: tr.abouut_app,
-            onPress: () => context.pushRoute(AboutAppRouter()),
+            onPress: () => context.pushRoute(AboutAppRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.conditions,
             title: tr.terms_and_conditions,
-            onPress: () => context.pushRoute(TermsAndConditionsRouter()),
+            onPress: () => context.pushRoute(TermsAndConditionsRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.privacy,
             title: tr.privacy_policy,
-            onPress: () => context.pushRoute(PrivacyPolicyRouter()),
+            onPress: () => context.pushRoute(PrivacyPolicyRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.contactUs,
             title: tr.Contact_us,
-            onPress: () => context.pushRoute(ContactUsRouter()),
+            onPress: () => context.pushRoute(ContactUsRoute()),
           ),
           ItemSetting(
             icon: AssetsManger.shareApp,
@@ -99,7 +99,7 @@ class BodySettingScreen extends StatelessWidget {
                             title: 'حذف',
                             buttonColor: AppColors.gryFormField,
                             titleColor: AppColors.primary,
-                            onPress: () => context.pushRoute(DeleteAccountRouter()),
+                            onPress: () => context.pushRoute(DeleteAccountRoute()),
                             height: 48,
                           ),
                         ),
